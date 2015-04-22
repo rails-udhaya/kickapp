@@ -17,4 +17,4 @@
 *.out
 
 #removing gemlock
-*.lock
+Gemfile.lock
