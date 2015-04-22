@@ -13,7 +13,7 @@ pid_status_english = system("ps -aux | grep newprojects_agent.rb | grep -vq grep
 						$logger.info ("nothing to do....")
 				else
 						$logger.info ("Process started....")
-						system("nohup /usr/bin/ruby ../newprojects_agent.rb &")
+						system("nohup bundle exec /usr/bin/ruby ../newprojects_agent.rb &")
 				end
 sleep 300
 end
