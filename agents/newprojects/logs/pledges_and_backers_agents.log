@@ -1,0 +1,439 @@
+# Logfile created on 2015-04-22 10:25:43 -0700 by logger.rb/31641
+I, [2015-04-22T10:25:43.443319 #6128]  INFO -- : Mysql connection established
+I, [2015-04-22T10:25:43.733583 #6128]  INFO -- : Processing Project........ 1
+I, [2015-04-22T10:25:44.419388 #6128]  INFO -- : Processing Project........ 2
+I, [2015-04-22T10:25:45.408036 #6128]  INFO -- : Processing Project........ 3
+I, [2015-04-22T10:25:46.374941 #6128]  INFO -- : Processing Project........ 4
+I, [2015-04-22T10:25:46.740700 #6128]  INFO -- : Processing Project........ 5
+I, [2015-04-22T10:25:47.129817 #6128]  INFO -- : Processing Project........ 6
+I, [2015-04-22T10:25:47.553061 #6128]  INFO -- : Processing Project........ 7
+I, [2015-04-22T10:25:47.943248 #6128]  INFO -- : Processing Project........ 8
+I, [2015-04-22T10:25:48.287587 #6128]  INFO -- : Processing Project........ 9
+I, [2015-04-22T10:25:48.743626 #6128]  INFO -- : Processing Project........ 10
+I, [2015-04-22T10:25:49.110279 #6128]  INFO -- : Processing Project........ 11
+I, [2015-04-22T10:25:49.500131 #6128]  INFO -- : Processing Project........ 12
+I, [2015-04-22T10:25:49.810837 #6128]  INFO -- : Processing Project........ 13
+I, [2015-04-22T10:25:50.335912 #6128]  INFO -- : Processing Project........ 14
+I, [2015-04-22T10:25:50.712905 #6128]  INFO -- : Processing Project........ 15
+I, [2015-04-22T10:25:51.047126 #6128]  INFO -- : Processing Project........ 16
+I, [2015-04-22T10:25:51.390641 #6128]  INFO -- : Processing Project........ 17
+I, [2015-04-22T10:25:51.758396 #6128]  INFO -- : Processing Project........ 18
+I, [2015-04-22T10:25:52.144975 #6128]  INFO -- : Processing Project........ 19
+I, [2015-04-22T10:25:52.502609 #6128]  INFO -- : Processing Project........ 20
+I, [2015-04-22T10:25:52.881156 #6128]  INFO -- : Processing Project........ 21
+I, [2015-04-22T10:25:53.992124 #6128]  INFO -- : Processing Project........ 22
+I, [2015-04-22T10:25:54.348121 #6128]  INFO -- : Processing Project........ 23
+I, [2015-04-22T10:25:54.680734 #6128]  INFO -- : Processing Project........ 24
+I, [2015-04-22T10:25:55.175785 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T10:25:55.176167 #6128]  INFO -- : backers_count..........33
+I, [2015-04-22T10:25:55.176489 #6128]  INFO -- : pledged..........1291.0
+I, [2015-04-22T10:25:55.176791 #6128]  INFO -- : Processing Project........ 25
+I, [2015-04-22T10:25:56.159785 #6128]  INFO -- : Processing Project........ 26
+I, [2015-04-22T10:25:56.575800 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T10:25:56.576094 #6128]  INFO -- : backers_count..........88
+I, [2015-04-22T10:25:56.576364 #6128]  INFO -- : pledged..........8145.0
+I, [2015-04-22T10:25:56.576655 #6128]  INFO -- : Processing Project........ 27
+I, [2015-04-22T10:25:56.892402 #6128]  INFO -- : Processing Project........ 28
+I, [2015-04-22T10:25:57.348107 #6128]  INFO -- : Processing Project........ 29
+I, [2015-04-22T10:25:57.693640 #6128]  INFO -- : Processing Project........ 30
+I, [2015-04-22T10:25:57.936697 #6128]  INFO -- : Processing Project........ 31
+I, [2015-04-22T10:25:58.471949 #6128]  INFO -- : Processing Project........ 32
+I, [2015-04-22T10:25:58.805210 #6128]  INFO -- : Processing Project........ 33
+I, [2015-04-22T10:25:59.139321 #6128]  INFO -- : Processing Project........ 34
+I, [2015-04-22T10:26:00.307410 #6128]  INFO -- : Processing Project........ 35
+I, [2015-04-22T10:26:00.695762 #6128]  INFO -- : Processing Project........ 36
+I, [2015-04-22T10:26:01.673612 #6128]  INFO -- : Processing Project........ 37
+I, [2015-04-22T10:26:02.362984 #6128]  INFO -- : Processing Project........ 38
+I, [2015-04-22T10:26:03.029168 #6128]  INFO -- : Processing Project........ 39
+I, [2015-04-22T10:26:03.440319 #6128]  INFO -- : Processing Project........ 40
+I, [2015-04-22T10:26:04.576160 #6128]  INFO -- : Processing Project........ 41
+I, [2015-04-22T10:26:05.096669 #6128]  INFO -- : Processing Project........ 42
+I, [2015-04-22T10:26:05.362124 #6128]  INFO -- : Processing Project........ 43
+I, [2015-04-22T10:26:05.720550 #6128]  INFO -- : Processing Project........ 44
+I, [2015-04-22T10:26:06.131372 #6128]  INFO -- : Processing Project........ 45
+I, [2015-04-22T10:26:06.753023 #6128]  INFO -- : Processing Project........ 46
+I, [2015-04-22T10:26:07.264584 #6128]  INFO -- : Processing Project........ 47
+I, [2015-04-22T10:26:07.597381 #6128]  INFO -- : Processing Project........ 48
+I, [2015-04-22T10:26:07.931324 #6128]  INFO -- : Processing Project........ 49
+I, [2015-04-22T10:26:08.264715 #6128]  INFO -- : Processing Project........ 50
+I, [2015-04-22T10:26:08.642558 #6128]  INFO -- : Processing Project........ 51
+I, [2015-04-22T10:26:09.065857 #6128]  INFO -- : Processing Project........ 52
+I, [2015-04-22T10:26:09.478252 #6128]  INFO -- : Processing Project........ 53
+I, [2015-04-22T10:26:10.200619 #6128]  INFO -- : Processing Project........ 54
+I, [2015-04-22T10:26:10.577606 #6128]  INFO -- : Processing Project........ 55
+I, [2015-04-22T10:26:11.033807 #6128]  INFO -- : Processing Project........ 56
+I, [2015-04-22T10:26:12.179625 #6128]  INFO -- : Processing Project........ 57
+I, [2015-04-22T10:26:12.634510 #6128]  INFO -- : Processing Project........ 58
+I, [2015-04-22T10:26:12.989174 #6128]  INFO -- : Processing Project........ 59
+I, [2015-04-22T10:26:13.472564 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T10:26:13.472852 #6128]  INFO -- : backers_count..........3
+I, [2015-04-22T10:26:13.473072 #6128]  INFO -- : pledged..........178.0
+I, [2015-04-22T10:26:13.473340 #6128]  INFO -- : Processing Project........ 60
+I, [2015-04-22T10:26:13.855650 #6128]  INFO -- : Processing Project........ 61
+I, [2015-04-22T10:26:14.247535 #6128]  INFO -- : Processing Project........ 62
+I, [2015-04-22T10:26:14.482346 #6128]  INFO -- : Processing Project........ 63
+I, [2015-04-22T10:26:14.834610 #6128]  INFO -- : Processing Project........ 64
+I, [2015-04-22T10:26:15.278921 #6128]  INFO -- : Processing Project........ 65
+I, [2015-04-22T10:26:15.657560 #6128]  INFO -- : Processing Project........ 66
+I, [2015-04-22T10:26:16.303894 #6128]  INFO -- : Processing Project........ 67
+I, [2015-04-22T10:26:16.661542 #6128]  INFO -- : Processing Project........ 68
+I, [2015-04-22T10:26:22.926913 #6128]  INFO -- : Processing Project........ 69
+I, [2015-04-22T10:26:23.272690 #6128]  INFO -- : Processing Project........ 70
+I, [2015-04-22T10:26:23.617339 #6128]  INFO -- : Processing Project........ 71
+I, [2015-04-22T10:30:43.561326 #6128]  INFO -- : Processing Project........ 71
+I, [2015-04-22T10:30:43.939923 #6128]  INFO -- : Processing Project........ 70
+I, [2015-04-22T10:30:44.295089 #6128]  INFO -- : Processing Project........ 69
+I, [2015-04-22T10:30:44.650835 #6128]  INFO -- : Processing Project........ 68
+I, [2015-04-22T10:30:50.775103 #6128]  INFO -- : Processing Project........ 67
+I, [2015-04-22T10:30:51.275138 #6128]  INFO -- : Processing Project........ 66
+I, [2015-04-22T10:30:52.197755 #6128]  INFO -- : Processing Project........ 65
+I, [2015-04-22T10:30:52.531335 #6128]  INFO -- : Processing Project........ 64
+I, [2015-04-22T10:30:52.898050 #6128]  INFO -- : Processing Project........ 63
+I, [2015-04-22T10:30:53.242310 #6128]  INFO -- : Processing Project........ 62
+I, [2015-04-22T10:30:53.467277 #6128]  INFO -- : Processing Project........ 61
+I, [2015-04-22T10:30:53.678444 #6128]  INFO -- : Processing Project........ 60
+I, [2015-04-22T10:30:54.054606 #6128]  INFO -- : Processing Project........ 59
+I, [2015-04-22T10:30:54.432981 #6128]  INFO -- : Processing Project........ 58
+I, [2015-04-22T10:30:54.834782 #6128]  INFO -- : Processing Project........ 57
+I, [2015-04-22T10:30:55.211235 #6128]  INFO -- : Processing Project........ 56
+I, [2015-04-22T10:30:56.256126 #6128]  INFO -- : Processing Project........ 55
+I, [2015-04-22T10:30:56.589974 #6128]  INFO -- : Processing Project........ 54
+I, [2015-04-22T10:30:56.956334 #6128]  INFO -- : Processing Project........ 53
+I, [2015-04-22T10:30:57.540342 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T10:30:57.540775 #6128]  INFO -- : backers_count..........9
+I, [2015-04-22T10:30:57.541067 #6128]  INFO -- : pledged..........373.0
+I, [2015-04-22T10:30:57.541707 #6128]  INFO -- : Processing Project........ 52
+I, [2015-04-22T10:30:57.867687 #6128]  INFO -- : Processing Project........ 51
+I, [2015-04-22T10:30:58.201246 #6128]  INFO -- : Processing Project........ 50
+I, [2015-04-22T10:30:58.534741 #6128]  INFO -- : Processing Project........ 49
+I, [2015-04-22T10:30:58.926112 #6128]  INFO -- : Processing Project........ 48
+I, [2015-04-22T10:30:59.257577 #6128]  INFO -- : Processing Project........ 47
+I, [2015-04-22T10:30:59.580043 #6128]  INFO -- : Processing Project........ 46
+I, [2015-04-22T10:30:59.903951 #6128]  INFO -- : Processing Project........ 45
+I, [2015-04-22T10:31:00.280598 #6128]  INFO -- : Processing Project........ 44
+I, [2015-04-22T10:31:00.682343 #6128]  INFO -- : Processing Project........ 43
+I, [2015-04-22T10:31:01.015727 #6128]  INFO -- : Processing Project........ 42
+I, [2015-04-22T10:31:01.265076 #6128]  INFO -- : Processing Project........ 41
+I, [2015-04-22T10:31:01.626235 #6128]  INFO -- : Processing Project........ 40
+I, [2015-04-22T10:31:02.840061 #6128]  INFO -- : Processing Project........ 39
+I, [2015-04-22T10:31:03.206559 #6128]  INFO -- : Processing Project........ 38
+I, [2015-04-22T10:31:04.052544 #6128]  INFO -- : Processing Project........ 37
+I, [2015-04-22T10:31:04.729733 #6128]  INFO -- : Processing Project........ 36
+I, [2015-04-22T10:31:05.755821 #6128]  INFO -- : Processing Project........ 35
+I, [2015-04-22T10:31:06.131588 #6128]  INFO -- : Processing Project........ 34
+I, [2015-04-22T10:31:07.231131 #6128]  INFO -- : Processing Project........ 33
+I, [2015-04-22T10:31:07.630515 #6128]  INFO -- : Processing Project........ 32
+I, [2015-04-22T10:31:07.975058 #6128]  INFO -- : Processing Project........ 31
+I, [2015-04-22T10:31:08.287131 #6128]  INFO -- : Processing Project........ 30
+I, [2015-04-22T10:31:08.574002 #6128]  INFO -- : Processing Project........ 29
+I, [2015-04-22T10:31:08.953284 #6128]  INFO -- : Processing Project........ 28
+I, [2015-04-22T10:31:09.353455 #6128]  INFO -- : Processing Project........ 27
+I, [2015-04-22T10:31:09.709540 #6128]  INFO -- : Processing Project........ 26
+I, [2015-04-22T10:31:10.065181 #6128]  INFO -- : Processing Project........ 25
+I, [2015-04-22T10:31:11.010053 #6128]  INFO -- : Processing Project........ 24
+I, [2015-04-22T10:31:11.716067 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T10:31:11.716341 #6128]  INFO -- : backers_count..........34
+I, [2015-04-22T10:31:11.716592 #6128]  INFO -- : pledged..........1391.0
+I, [2015-04-22T10:31:11.716824 #6128]  INFO -- : Processing Project........ 23
+I, [2015-04-22T10:31:12.110561 #6128]  INFO -- : Processing Project........ 22
+I, [2015-04-22T10:31:12.523208 #6128]  INFO -- : Processing Project........ 21
+I, [2015-04-22T10:31:13.322568 #6128]  INFO -- : Processing Project........ 20
+I, [2015-04-22T10:31:13.789205 #6128]  INFO -- : Processing Project........ 19
+I, [2015-04-22T10:31:14.233532 #6128]  INFO -- : Processing Project........ 18
+I, [2015-04-22T10:31:14.601717 #6128]  INFO -- : Processing Project........ 17
+I, [2015-04-22T10:31:14.989540 #6128]  INFO -- : Processing Project........ 16
+I, [2015-04-22T10:31:15.512692 #6128]  INFO -- : Processing Project........ 15
+I, [2015-04-22T10:31:15.846272 #6128]  INFO -- : Processing Project........ 14
+I, [2015-04-22T10:31:16.213018 #6128]  INFO -- : Processing Project........ 13
+I, [2015-04-22T10:31:16.547185 #6128]  INFO -- : Processing Project........ 12
+I, [2015-04-22T10:31:16.891536 #6128]  INFO -- : Processing Project........ 11
+I, [2015-04-22T10:31:17.225237 #6128]  INFO -- : Processing Project........ 10
+I, [2015-04-22T10:31:17.561296 #6128]  INFO -- : Processing Project........ 9
+I, [2015-04-22T10:31:18.103696 #6128]  INFO -- : Processing Project........ 8
+I, [2015-04-22T10:31:18.514852 #6128]  INFO -- : Processing Project........ 7
+I, [2015-04-22T10:31:18.870701 #6128]  INFO -- : Processing Project........ 6
+I, [2015-04-22T10:31:19.416237 #6128]  INFO -- : Processing Project........ 5
+I, [2015-04-22T10:31:19.737228 #6128]  INFO -- : Processing Project........ 4
+I, [2015-04-22T10:31:20.093052 #6128]  INFO -- : Processing Project........ 3
+I, [2015-04-22T10:31:21.195411 #6128]  INFO -- : Processing Project........ 2
+I, [2015-04-22T10:31:21.571615 #6128]  INFO -- : Processing Project........ 1
+I, [2015-04-22T11:30:43.536761 #6128]  INFO -- : Processing Project........ 1
+I, [2015-04-22T11:30:44.121711 #6128]  INFO -- : Processing Project........ 2
+I, [2015-04-22T11:30:44.609655 #6128]  INFO -- : Processing Project........ 3
+I, [2015-04-22T11:30:46.068751 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:30:46.069163 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:30:46.069446 #6128]  INFO -- : pledged..........10.0
+I, [2015-04-22T11:30:46.070657 #6128]  INFO -- : Processing Project........ 4
+I, [2015-04-22T11:30:46.454953 #6128]  INFO -- : Processing Project........ 5
+I, [2015-04-22T11:30:46.991621 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:30:46.992101 #6128]  INFO -- : backers_count..........4
+I, [2015-04-22T11:30:46.992425 #6128]  INFO -- : pledged..........625.0
+I, [2015-04-22T11:30:46.992800 #6128]  INFO -- : Processing Project........ 6
+I, [2015-04-22T11:30:47.520197 #6128]  INFO -- : Processing Project........ 7
+I, [2015-04-22T11:30:47.998377 #6128]  INFO -- : Processing Project........ 8
+I, [2015-04-22T11:30:48.468902 #6128]  INFO -- : Processing Project........ 9
+I, [2015-04-22T11:30:49.045751 #6128]  INFO -- : Processing Project........ 10
+I, [2015-04-22T11:30:49.622356 #6128]  INFO -- : Processing Project........ 11
+I, [2015-04-22T11:30:50.059107 #6128]  INFO -- : Processing Project........ 12
+I, [2015-04-22T11:30:50.570798 #6128]  INFO -- : Processing Project........ 13
+I, [2015-04-22T11:30:51.205452 #6128]  INFO -- : Processing Project........ 14
+I, [2015-04-22T11:30:52.116334 #6128]  INFO -- : Processing Project........ 15
+I, [2015-04-22T11:30:52.647460 #6128]  INFO -- : Processing Project........ 16
+I, [2015-04-22T11:30:53.013621 #6128]  INFO -- : Processing Project........ 17
+I, [2015-04-22T11:30:53.494496 #6128]  INFO -- : Processing Project........ 18
+I, [2015-04-22T11:30:53.993184 #6128]  INFO -- : Processing Project........ 19
+I, [2015-04-22T11:30:54.339996 #6128]  INFO -- : Processing Project........ 20
+I, [2015-04-22T11:30:54.838452 #6128]  INFO -- : Processing Project........ 21
+I, [2015-04-22T11:30:55.626961 #6128]  INFO -- : Processing Project........ 22
+I, [2015-04-22T11:30:56.037527 #6128]  INFO -- : Processing Project........ 23
+I, [2015-04-22T11:30:56.442820 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:30:56.443235 #6128]  INFO -- : backers_count..........3
+I, [2015-04-22T11:30:56.443562 #6128]  INFO -- : pledged..........165.0
+I, [2015-04-22T11:30:56.443913 #6128]  INFO -- : Processing Project........ 24
+I, [2015-04-22T11:30:56.976426 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:30:56.976829 #6128]  INFO -- : backers_count..........39
+I, [2015-04-22T11:30:56.977087 #6128]  INFO -- : pledged..........1656.0
+I, [2015-04-22T11:30:56.977428 #6128]  INFO -- : Processing Project........ 25
+I, [2015-04-22T11:30:57.930816 #6128]  INFO -- : Processing Project........ 26
+I, [2015-04-22T11:30:58.343725 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:30:58.344137 #6128]  INFO -- : backers_count..........94
+I, [2015-04-22T11:30:58.344405 #6128]  INFO -- : pledged..........8549.0
+I, [2015-04-22T11:30:58.344724 #6128]  INFO -- : Processing Project........ 27
+I, [2015-04-22T11:30:58.696932 #6128]  INFO -- : Processing Project........ 28
+I, [2015-04-22T11:30:59.128425 #6128]  INFO -- : Processing Project........ 29
+I, [2015-04-22T11:30:59.618509 #6128]  INFO -- : Processing Project........ 30
+I, [2015-04-22T11:30:59.984016 #6128]  INFO -- : Processing Project........ 31
+I, [2015-04-22T11:31:00.722985 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:00.723498 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:00.723823 #6128]  INFO -- : pledged..........25.0
+I, [2015-04-22T11:31:00.724153 #6128]  INFO -- : Processing Project........ 32
+I, [2015-04-22T11:31:01.289923 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:01.290380 #6128]  INFO -- : backers_count..........21
+I, [2015-04-22T11:31:01.290799 #6128]  INFO -- : pledged..........1147.0
+I, [2015-04-22T11:31:01.291159 #6128]  INFO -- : Processing Project........ 33
+I, [2015-04-22T11:31:01.752196 #6128]  INFO -- : Processing Project........ 34
+I, [2015-04-22T11:31:02.941396 #6128]  INFO -- : Processing Project........ 35
+I, [2015-04-22T11:31:03.700581 #6128]  INFO -- : Processing Project........ 36
+I, [2015-04-22T11:31:04.811682 #6128]  INFO -- : Processing Project........ 37
+I, [2015-04-22T11:31:05.670016 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:05.670414 #6128]  INFO -- : backers_count..........2
+I, [2015-04-22T11:31:05.670696 #6128]  INFO -- : pledged..........1140.0
+I, [2015-04-22T11:31:05.671192 #6128]  INFO -- : Processing Project........ 38
+I, [2015-04-22T11:31:06.556251 #6128]  INFO -- : Processing Project........ 39
+I, [2015-04-22T11:31:06.987349 #6128]  INFO -- : Processing Project........ 40
+I, [2015-04-22T11:31:08.079782 #6128]  INFO -- : Processing Project........ 41
+I, [2015-04-22T11:31:08.626869 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:08.627523 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:08.627844 #6128]  INFO -- : pledged..........100.0
+I, [2015-04-22T11:31:08.628218 #6128]  INFO -- : Processing Project........ 42
+I, [2015-04-22T11:31:08.879893 #6128]  INFO -- : Processing Project........ 43
+I, [2015-04-22T11:31:09.511479 #6128]  INFO -- : Processing Project........ 44
+I, [2015-04-22T11:31:09.927419 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:09.927861 #6128]  INFO -- : backers_count..........12
+I, [2015-04-22T11:31:09.928186 #6128]  INFO -- : pledged..........380.0
+I, [2015-04-22T11:31:09.928537 #6128]  INFO -- : Processing Project........ 45
+I, [2015-04-22T11:31:10.346488 #6128]  INFO -- : Processing Project........ 46
+I, [2015-04-22T11:31:10.714062 #6128]  INFO -- : Processing Project........ 47
+I, [2015-04-22T11:31:11.115643 #6128]  INFO -- : Processing Project........ 48
+I, [2015-04-22T11:31:11.515245 #6128]  INFO -- : Processing Project........ 49
+I, [2015-04-22T11:31:11.915051 #6128]  INFO -- : Processing Project........ 50
+I, [2015-04-22T11:31:12.315436 #6128]  INFO -- : Processing Project........ 51
+I, [2015-04-22T11:31:12.715370 #6128]  INFO -- : Processing Project........ 52
+I, [2015-04-22T11:31:13.190722 #6128]  INFO -- : Processing Project........ 53
+I, [2015-04-22T11:31:13.896542 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:13.896938 #6128]  INFO -- : backers_count..........15
+I, [2015-04-22T11:31:13.897215 #6128]  INFO -- : pledged..........490.0
+I, [2015-04-22T11:31:13.897937 #6128]  INFO -- : Processing Project........ 54
+I, [2015-04-22T11:31:14.474830 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:14.475374 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:14.475710 #6128]  INFO -- : pledged..........75.0
+I, [2015-04-22T11:31:14.476066 #6128]  INFO -- : Processing Project........ 55
+I, [2015-04-22T11:31:14.892531 #6128]  INFO -- : Processing Project........ 56
+I, [2015-04-22T11:31:16.076163 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:16.076622 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:16.076911 #6128]  INFO -- : pledged..........25.0
+I, [2015-04-22T11:31:16.077911 #6128]  INFO -- : Processing Project........ 57
+I, [2015-04-22T11:31:16.532126 #6128]  INFO -- : Processing Project........ 58
+I, [2015-04-22T11:31:16.939866 #6128]  INFO -- : Processing Project........ 59
+I, [2015-04-22T11:31:17.356584 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:17.357124 #6128]  INFO -- : backers_count..........8
+I, [2015-04-22T11:31:17.357447 #6128]  INFO -- : pledged..........456.0
+I, [2015-04-22T11:31:17.357775 #6128]  INFO -- : Processing Project........ 60
+I, [2015-04-22T11:31:18.068320 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:18.068841 #6128]  INFO -- : backers_count..........3
+I, [2015-04-22T11:31:18.069170 #6128]  INFO -- : pledged..........134.0
+I, [2015-04-22T11:31:18.069598 #6128]  INFO -- : Processing Project........ 61
+I, [2015-04-22T11:31:18.337195 #6128]  INFO -- : Processing Project........ 62
+I, [2015-04-22T11:31:18.637813 #6128]  INFO -- : Processing Project........ 63
+I, [2015-04-22T11:31:19.152554 #6128]  INFO -- : Processing Project........ 64
+I, [2015-04-22T11:31:19.488630 #6128]  INFO -- : Processing Project........ 65
+I, [2015-04-22T11:31:19.820173 #6128]  INFO -- : Processing Project........ 66
+I, [2015-04-22T11:31:20.880331 #6128]  INFO -- : Processing Project........ 67
+I, [2015-04-22T11:31:21.365781 #6128]  INFO -- : Processing Project........ 68
+I, [2015-04-22T11:31:27.882727 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:27.883364 #6128]  INFO -- : backers_count..........2
+I, [2015-04-22T11:31:27.883696 #6128]  INFO -- : pledged..........600.0
+I, [2015-04-22T11:31:28.143217 #6128]  INFO -- : Processing Project........ 69
+I, [2015-04-22T11:31:28.605605 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:28.606254 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:28.606638 #6128]  INFO -- : pledged..........69.0
+I, [2015-04-22T11:31:28.607030 #6128]  INFO -- : Processing Project........ 70
+I, [2015-04-22T11:31:29.039228 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:29.039792 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:29.040121 #6128]  INFO -- : pledged..........30.0
+I, [2015-04-22T11:31:29.040475 #6128]  INFO -- : Processing Project........ 71
+I, [2015-04-22T11:31:29.559115 #6128]  INFO -- : Processing Project........ 72
+I, [2015-04-22T11:31:29.984098 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:29.984503 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:29.984713 #6128]  INFO -- : pledged..........10.0
+I, [2015-04-22T11:31:29.984940 #6128]  INFO -- : Processing Project........ 73
+I, [2015-04-22T11:31:30.662439 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:30.663043 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:30.663371 #6128]  INFO -- : pledged..........50.0
+I, [2015-04-22T11:31:30.663827 #6128]  INFO -- : Processing Project........ 74
+I, [2015-04-22T11:31:31.347626 #6128]  INFO -- : Processing Project........ 75
+I, [2015-04-22T11:31:31.863420 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:31.863857 #6128]  INFO -- : backers_count..........3
+I, [2015-04-22T11:31:31.864126 #6128]  INFO -- : pledged..........1100.0
+I, [2015-04-22T11:31:31.864404 #6128]  INFO -- : Processing Project........ 76
+I, [2015-04-22T11:31:32.449604 #6128]  INFO -- : Processing Project........ 77
+I, [2015-04-22T11:31:33.004135 #6128]  INFO -- : Processing Project........ 78
+I, [2015-04-22T11:31:33.830892 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:33.831334 #6128]  INFO -- : backers_count..........11
+I, [2015-04-22T11:31:33.831658 #6128]  INFO -- : pledged..........489.0
+I, [2015-04-22T11:31:33.832009 #6128]  INFO -- : Processing Project........ 79
+I, [2015-04-22T11:31:34.494161 #6128]  INFO -- : Processing Project........ 80
+I, [2015-04-22T11:31:34.915127 #6128]  INFO -- : Processing Project........ 81
+I, [2015-04-22T11:31:35.251039 #6128]  INFO -- : Processing Project........ 82
+I, [2015-04-22T11:31:35.640486 #6128]  INFO -- : Processing Project........ 83
+I, [2015-04-22T11:31:36.152325 #6128]  INFO -- : Processing Project........ 84
+I, [2015-04-22T11:31:36.537380 #6128]  INFO -- : Processing Project........ 85
+I, [2015-04-22T11:31:36.885727 #6128]  INFO -- : Processing Project........ 86
+I, [2015-04-22T11:31:37.388371 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:37.389154 #6128]  INFO -- : backers_count..........2
+I, [2015-04-22T11:31:37.389510 #6128]  INFO -- : pledged..........23.0
+I, [2015-04-22T11:31:37.389853 #6128]  INFO -- : Processing Project........ 87
+I, [2015-04-22T11:31:38.595607 #6128]  INFO -- : Processing Project........ 88
+I, [2015-04-22T11:31:39.003523 #6128]  INFO -- : Processing Project........ 89
+I, [2015-04-22T11:31:39.352668 #6128]  INFO -- : Processing Project........ 90
+I, [2015-04-22T11:31:39.867097 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:31:39.867631 #6128]  INFO -- : backers_count..........1
+I, [2015-04-22T11:31:39.867938 #6128]  INFO -- : pledged..........10.0
+I, [2015-04-22T11:31:39.868280 #6128]  INFO -- : Processing Project........ 91
+I, [2015-04-22T11:31:40.483853 #6128]  INFO -- : Processing Project........ 92
+I, [2015-04-22T11:31:40.840746 #6128]  INFO -- : Processing Project........ 93
+I, [2015-04-22T11:31:41.275628 #6128]  INFO -- : Processing Project........ 94
+I, [2015-04-22T11:31:41.988350 #6128]  INFO -- : Processing Project........ 95
+I, [2015-04-22T11:31:43.076962 #6128]  INFO -- : Processing Project........ 96
+I, [2015-04-22T11:31:44.334046 #6128]  INFO -- : Processing Project........ 97
+I, [2015-04-22T11:31:44.722873 #6128]  INFO -- : Processing Project........ 98
+I, [2015-04-22T11:35:43.521750 #6128]  INFO -- : Processing Project........ 98
+I, [2015-04-22T11:35:44.072969 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:35:44.073528 #6128]  INFO -- : backers_count..........2
+I, [2015-04-22T11:35:44.073872 #6128]  INFO -- : pledged..........28.0
+I, [2015-04-22T11:35:44.074229 #6128]  INFO -- : Processing Project........ 97
+I, [2015-04-22T11:35:44.470247 #6128]  INFO -- : Processing Project........ 96
+I, [2015-04-22T11:35:45.503982 #6128]  INFO -- : Processing Project........ 95
+I, [2015-04-22T11:35:46.747602 #6128]  INFO -- : Processing Project........ 94
+I, [2015-04-22T11:35:47.105896 #6128]  INFO -- : Processing Project........ 93
+I, [2015-04-22T11:35:47.538721 #6128]  INFO -- : Processing Project........ 92
+I, [2015-04-22T11:35:47.926684 #6128]  INFO -- : Processing Project........ 91
+I, [2015-04-22T11:35:48.538381 #6128]  INFO -- : Processing Project........ 90
+I, [2015-04-22T11:35:48.860911 #6128]  INFO -- : Processing Project........ 89
+I, [2015-04-22T11:35:49.183270 #6128]  INFO -- : Processing Project........ 88
+I, [2015-04-22T11:35:49.563617 #6128]  INFO -- : Processing Project........ 87
+I, [2015-04-22T11:35:51.001347 #6128]  INFO -- : Processing Project........ 86
+I, [2015-04-22T11:35:51.445557 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:35:51.446006 #6128]  INFO -- : backers_count..........3
+I, [2015-04-22T11:35:51.446280 #6128]  INFO -- : pledged..........73.0
+I, [2015-04-22T11:35:51.446599 #6128]  INFO -- : Processing Project........ 85
+I, [2015-04-22T11:35:51.864871 #6128]  INFO -- : Processing Project........ 84
+I, [2015-04-22T11:35:52.218575 #6128]  INFO -- : Processing Project........ 83
+I, [2015-04-22T11:35:52.554652 #6128]  INFO -- : Processing Project........ 82
+I, [2015-04-22T11:35:53.064090 #6128]  INFO -- : Processing Project........ 81
+I, [2015-04-22T11:35:53.596701 #6128]  INFO -- : Processing Project........ 80
+I, [2015-04-22T11:35:54.075366 #6128]  INFO -- : Processing Project........ 79
+I, [2015-04-22T11:35:54.512103 #6128]  INFO -- : Processing Project........ 78
+I, [2015-04-22T11:35:54.958715 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:35:54.959264 #6128]  INFO -- : backers_count..........12
+I, [2015-04-22T11:35:54.959591 #6128]  INFO -- : pledged..........591.0
+I, [2015-04-22T11:35:54.959948 #6128]  INFO -- : Processing Project........ 77
+I, [2015-04-22T11:35:55.511116 #6128]  INFO -- : Processing Project........ 76
+I, [2015-04-22T11:35:56.133976 #6128]  INFO -- : Processing Project........ 75
+I, [2015-04-22T11:35:56.890868 #6128]  INFO -- : Processing Project........ 74
+I, [2015-04-22T11:35:57.367427 #6128]  INFO -- : Processing Project........ 73
+I, [2015-04-22T11:35:57.922866 #6128]  INFO -- : Processing Project........ 72
+I, [2015-04-22T11:35:58.368794 #6128]  INFO -- : Processing Project........ 71
+I, [2015-04-22T11:35:58.758016 #6128]  INFO -- : Processing Project........ 70
+I, [2015-04-22T11:35:59.125111 #6128]  INFO -- : Processing Project........ 69
+I, [2015-04-22T11:35:59.636022 #6128]  INFO -- : Processing Project........ 68
+I, [2015-04-22T11:36:07.536807 #6128]  INFO -- : Processing Project........ 67
+I, [2015-04-22T11:36:07.905468 #6128]  INFO -- : Processing Project........ 66
+I, [2015-04-22T11:36:08.619284 #6128]  INFO -- : Processing Project........ 65
+I, [2015-04-22T11:36:09.081769 #6128]  INFO -- : Processing Project........ 64
+I, [2015-04-22T11:36:09.472811 #6128]  INFO -- : Processing Project........ 63
+I, [2015-04-22T11:36:09.872985 #6128]  INFO -- : Processing Project........ 62
+I, [2015-04-22T11:36:10.129745 #6128]  INFO -- : Processing Project........ 61
+I, [2015-04-22T11:36:10.389569 #6128]  INFO -- : Processing Project........ 60
+I, [2015-04-22T11:36:10.809170 #6128]  INFO -- : Created new backers entry
+I, [2015-04-22T11:36:10.809570 #6128]  INFO -- : backers_count..........4
+I, [2015-04-22T11:36:10.809793 #6128]  INFO -- : pledged..........151.0
+I, [2015-04-22T11:36:10.810021 #6128]  INFO -- : Processing Project........ 59
+I, [2015-04-22T11:36:11.184812 #6128]  INFO -- : Processing Project........ 58
+I, [2015-04-22T11:36:11.683010 #6128]  INFO -- : Processing Project........ 57
+I, [2015-04-22T11:36:12.149300 #6128]  INFO -- : Processing Project........ 56
+I, [2015-04-22T11:36:13.065732 #6128]  INFO -- : Processing Project........ 55
+I, [2015-04-22T11:36:13.516085 #6128]  INFO -- : Processing Project........ 54
+I, [2015-04-22T11:36:13.849656 #6128]  INFO -- : Processing Project........ 53
+I, [2015-04-22T11:36:14.407781 #6128]  INFO -- : Processing Project........ 52
+I, [2015-04-22T11:36:14.997254 #6128]  INFO -- : Processing Project........ 51
+I, [2015-04-22T11:36:15.519374 #6128]  INFO -- : Processing Project........ 50
+I, [2015-04-22T11:36:15.895878 #6128]  INFO -- : Processing Project........ 49
+I, [2015-04-22T11:36:16.330298 #6128]  INFO -- : Processing Project........ 48
+I, [2015-04-22T11:36:16.788648 #6128]  INFO -- : Processing Project........ 47
+I, [2015-04-22T11:36:17.376716 #6128]  INFO -- : Processing Project........ 46
+I, [2015-04-22T11:36:18.011049 #6128]  INFO -- : Processing Project........ 45
+I, [2015-04-22T11:36:18.610968 #6128]  INFO -- : Processing Project........ 44
+I, [2015-04-22T11:36:19.121886 #6128]  INFO -- : Processing Project........ 43
+I, [2015-04-22T11:36:19.524513 #6128]  INFO -- : Processing Project........ 42
+I, [2015-04-22T11:36:19.788476 #6128]  INFO -- : Processing Project........ 41
+I, [2015-04-22T11:36:20.113579 #6128]  INFO -- : Processing Project........ 40
+I, [2015-04-22T11:36:21.692452 #6128]  INFO -- : Processing Project........ 39
+I, [2015-04-22T11:36:22.037235 #6128]  INFO -- : Processing Project........ 38
+I, [2015-04-22T11:36:22.961188 #6128]  INFO -- : Processing Project........ 37
+I, [2015-04-22T11:36:23.571022 #6128]  INFO -- : Processing Project........ 36
+I, [2015-04-22T11:36:24.584759 #6128]  INFO -- : Processing Project........ 35
+I, [2015-04-22T11:36:24.960793 #6128]  INFO -- : Processing Project........ 34
+I, [2015-04-22T11:36:25.950109 #6128]  INFO -- : Processing Project........ 33
+I, [2015-04-22T11:36:26.872316 #6128]  INFO -- : Processing Project........ 32
+I, [2015-04-22T11:36:27.182252 #6128]  INFO -- : Processing Project........ 31
+I, [2015-04-22T11:36:27.563018 #6128]  INFO -- : Processing Project........ 30
+I, [2015-04-22T11:36:27.809681 #6128]  INFO -- : Processing Project........ 29
+I, [2015-04-22T11:36:28.195034 #6128]  INFO -- : Processing Project........ 28
+I, [2015-04-22T11:36:28.582236 #6128]  INFO -- : Processing Project........ 27
+I, [2015-04-22T11:36:29.020931 #6128]  INFO -- : Processing Project........ 26
+I, [2015-04-22T11:36:29.473633 #6128]  INFO -- : Processing Project........ 25
+I, [2015-04-22T11:36:30.588990 #6128]  INFO -- : Processing Project........ 24
+I, [2015-04-22T11:36:31.308884 #6128]  INFO -- : Processing Project........ 23
+I, [2015-04-22T11:36:31.675097 #6128]  INFO -- : Processing Project........ 22
+I, [2015-04-22T11:36:32.074300 #6128]  INFO -- : Processing Project........ 21
+I, [2015-04-22T11:36:32.697822 #6128]  INFO -- : Processing Project........ 20
+I, [2015-04-22T11:36:33.054760 #6128]  INFO -- : Processing Project........ 19
+I, [2015-04-22T11:36:33.431070 #6128]  INFO -- : Processing Project........ 18
+I, [2015-04-22T11:36:33.777685 #6128]  INFO -- : Processing Project........ 17
+I, [2015-04-22T11:36:34.144629 #6128]  INFO -- : Processing Project........ 16
+I, [2015-04-22T11:36:34.530901 #6128]  INFO -- : Processing Project........ 15
+I, [2015-04-22T11:36:35.032917 #6128]  INFO -- : Processing Project........ 14
+I, [2015-04-22T11:36:35.356701 #6128]  INFO -- : Processing Project........ 13
+I, [2015-04-22T11:36:35.721088 #6128]  INFO -- : Processing Project........ 12
+I, [2015-04-22T11:36:36.123012 #6128]  INFO -- : Processing Project........ 11
+I, [2015-04-22T11:36:36.456115 #6128]  INFO -- : Processing Project........ 10
+I, [2015-04-22T11:36:36.923638 #6128]  INFO -- : Processing Project........ 9
+I, [2015-04-22T11:36:37.569138 #6128]  INFO -- : Processing Project........ 8
+I, [2015-04-22T11:36:38.390476 #6128]  INFO -- : Processing Project........ 7
+I, [2015-04-22T11:36:38.769647 #6128]  INFO -- : Processing Project........ 6
+I, [2015-04-22T11:36:39.182135 #6128]  INFO -- : Processing Project........ 5
+I, [2015-04-22T11:36:39.582075 #6128]  INFO -- : Processing Project........ 4
+I, [2015-04-22T11:36:39.947634 #6128]  INFO -- : Processing Project........ 3
+I, [2015-04-22T11:36:41.113907 #6128]  INFO -- : Processing Project........ 2
+I, [2015-04-22T11:36:41.625990 #6128]  INFO -- : Processing Project........ 1

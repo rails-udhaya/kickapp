@@ -1,0 +1,144 @@
+<div class="main-content">
+                <section class="mp-box mp-box-grey">
+                    <div class="box-row mp-gig-wrapper js-mp-gig-wrapper">
+                        <div class="mp-gig">
+                            <aside class="gig-sidebar">
+       <!--                 <div class="gig-social-bar cf js-gig-social-bar">
+                            <div class="standard-social-icons">
+                                    <a target="_blank" href="https://www.fiverr.com/s2/561ea9d77d" data-hint="Share on Facebook" data-gtm-label="facebook" data-gtm-event="New Gig Page" data-gtm-action="Click" data-fiverr-event="facebook" class="btn-social fb js-gtm-event-auto js-fiverr-event hint--bottom">Share</a>
+                                    <a target="_blank" rel="nofollow" href="http://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.fiverr.com%2Fs2%2Fc9348125ef&amp;related=Fiverr&amp;text=Check+it+out%21+jsillars+will+professionally+edit+for+grammar+and+clarity+for+%245+on+%23Fiverr" data-related="fiverr: Follow @Fiverr on Twitter for live site and service updates" data-hint="Share on Twitter" data-gtm-label="twitter" data-gtm-event="New Gig Page" data-gtm-action="Click" data-fiverr-event="twitter" data-count="vertical" class="btn-social tw js-gtm-event-auto js-fiverr-event hint--bottom">Tweet</a>
+                                <a source="order_page" social_platform="gplus" sharer="buyer" order_id="" object_type="" object_id="5092753" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.fiverr.com%2Fs2%2F6d4a1c5504&amp;title=professionally+edit+for+grammar+and+clarity" data-social-platform="gplus" data-hint="Share on Google+" data-gtm-label="gplus-share" data-gtm-event="New Gig Page" data-gtm-action="Click" data-fiverr-event="gplus" class="btn-social gplus js-gtm-event-auto js-fiverr-event hint--bottom" buyable_type="">Google+</a>
+                                    <a target="blank" href="https://www.fiverr.com/jsillars/professionally-edit-for-grammar-and-clarity?gig_id=5092753&amp;utm_campaign=base_gig_show_share_1&amp;utm_content=&amp;utm_medium=shared&amp;utm_source=linkedin&amp;utm_term=&amp;view=gig" data-hint="Share on LinkedIn" data-gtm-label="linkedin" data-gtm-event="New Gig Page" data-gtm-action="Click" data-fiverr-event="linkedin" class="btn-social ln js-gtm-event-auto js-fiverr-event hint--bottom">Post</a>
+                                <a utm_medium="shared" utm_campaign_source="email" utm_campaign="base_delivery_1" source="order_page" social_platform="email" sharer="buyer" order_id="" object_type="" object_id="5092753" href="#" data-social-platform="email" data-hint="Share via Email" data-gtm-label="email" data-gtm-event="New Gig Page" data-gtm-action="Click" data-fiverr-event="email_open" class="btn-social email js-share-email js-gtm-event-auto js-fiverr-event hint--bottom" buyable_type="">Email</a>
+                            </div>
+                        </div>
+                   
+
+!-->
+<section class="gig-seller-info">
+                        <div class="seller-image cf">
+                            <div class="user-pict-130">
+                                <a rel="nofollow,noindex" target="_blank" href="<%=@creator.urls.web.user%>">
+                                    <img width="130" height="130" alt="jsillars" src="<%=@creator.avatar.small%>" data-reload="inprogress">
+                                </a>
+                            </div>
+
+                            <a data-gtm-label="Visit Seller Page" data-gtm-action="Click" data-gtm-category="" class="js-gtm-event-auto seller-link" href="<%=@creator.urls.web.user%>" target="_blank"><%=@creator.name%></a>
+
+                                <small>
+																																<%if @creator.location%>
+																																												<%=@creator.location.displayable_name%>
+																																			<%else%>
+																																				N/A
+																																				<%end%>
+																																
+																																</small>
+                               
+                        </div>
+
+                    <div class="seller-desc">
+                            <p><%=@creator.biography%></p>
+                                <br>
+                        </div>
+</section>
+
+                            </aside>
+
+                                <div id="overview" class="gig-page-section-dummy" style="top: -159px;"></div>
+                                <div class="gig-page-section gig-page-section-overview ">
+                                    
+                                <div id="gallery-5092753" class="gallery gallery-gig-detail js-gallery-gig-detail">
+
+                                                                        <header class="mp-gig-header">
+                                        <h1 itemprop="name">
+                                            <%=@project.name%>
+
+                                                <span class="gig-category">
+																																																<%if @project.location%>
+                                                  <%=@project.location.displayable_name%>
+																																																<%end%>
+                                                </span>
+                                        </h1>
+                                        <div class="mp-gig-header-bottom cf t-a-center">
+
+                                            <span class="gig-ratings-pull-left">
+                                                    <a data-gtm-label="Header Reviews Link" data-gtm-action="Click" data-gtm-category="New Gig Page" class="js-gtm-event-auto" href="#reviews">
+                                                        <span class="">Goal:</span>
+                                                        <span class="gig-ratings-count"><%=@project.currency_symbol%><%=@project.goal%></span>
+                                                    </a>
+                                            </span>
+
+                                                <span class="gig-queue">
+                                                    <i></i>
+																																																				   <span class="">Pledged:</span>
+                                                    <%=@project.pledged%>
+                                                </span>
+
+                                                <span class="gig-queue">
+																																																				   <span class="">Backers:</span>
+                                                    <%=@project.backers_count.to_i%>
+                                                </span>
+
+                                                <span class="gig-duration">
+                                                    <i class="fa fa-clock-o"></i>
+                                                 <%#=@project.deadline%>
+																																																	<%=((DateTime.strptime(@project.deadline,'%s').to_date - Time.now.to_date).to_i) - 1%> Days Left 
+                                                </span>
+                                        </div>
+                                    </header>
+
+
+                                    <div class="fader-gallery js-gallery-fader">
+
+
+                                            
+
+<div class="slide js-slide selected-slide">
+
+        <div class="img-holder js-img-holder gig-item-ll">
+                    <img src="<%=@project.photo.full%>" itemprop="image" data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/gigs/5092753/original/Hannah_Sillars-124.jpg" alt="professionally edit for grammar and clarity" data-reload="inprogress">
+        </div>
+
+</div>
+
+                                            
+
+                                 </div>
+
+                              </div>
+                                
+                                </div>
+                                <div id="description" class="gig-page-section-dummy" style="top: -159px;"></div>
+                                <div class="gig-page-section gig-page-section-description ">
+                                                                    
+                                <header>
+                                    <h4 class="gig-fancy-header">About This Project</h4>
+                                </header>
+                                
+
+
+                                    <div itemprop="description" class="gig-main-desc js-gig-main-desc">
+                                        <p><%=@project.blurb%></p>
+                                    </div>
+
+
+
+
+                                </div>
+                                <div id="extras" class="gig-page-section-dummy" style="top: -159px;"></div>
+                                
+                                                                    
+
+
+                                    
+  </div>
+                          
+                                
+                              </div>
+
+                            
+         </div>
+                    </div>
+
+                </section>
+</div>
