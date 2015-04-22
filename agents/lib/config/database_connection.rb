@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 # connect to the MySQL server
 def get_db_connection(env)
-  puts "ddddddddddddd"
   $db_connection_established = false
   db_config = YAML::load(File.open("#{File.dirname(__FILE__)}/database.yml"))
   $AGENT_ENV = env
