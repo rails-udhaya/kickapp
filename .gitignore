@@ -18,3 +18,5 @@
 
 #removing gemlock
 Gemfile.lock
+agents/newprojects/monitors/logs/*.log
+agents/newprojects/logs/*.log
