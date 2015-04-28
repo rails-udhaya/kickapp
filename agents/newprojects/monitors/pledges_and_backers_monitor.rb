@@ -7,7 +7,7 @@ require 'logger'
 						#~ $logger.level = Logger::DEBUG
 						$logger.formatter = Logger::Formatter.new
 
-while true do
+#~ while true do
 pid_status_english = system("ps -aux | grep pledges_and_backers_agents.rb | grep -vq grep")
 				if pid_status_english
 						$logger.info ("nothing to do with pledges_and_backers_agents....")
@@ -15,5 +15,5 @@ pid_status_english = system("ps -aux | grep pledges_and_backers_agents.rb | grep
 						$logger.info ("Process started pledges_and_backers_agents....")
 						system("nohup bundle exec /usr/bin/ruby ../pledges_and_backers_agents.rb &")
 				end
-sleep 300
-end
+#~ sleep 300
+#~ end

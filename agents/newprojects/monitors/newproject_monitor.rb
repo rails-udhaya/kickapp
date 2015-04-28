@@ -7,7 +7,7 @@ require 'logger'
 						#~ $logger.level = Logger::DEBUG
 						$logger.formatter = Logger::Formatter.new
 
-while true do
+#~ while true do
 pid_status_english = system("ps -aux | grep newprojects_agent.rb | grep -vq grep")
 				if pid_status_english
 						$logger.info ("nothing to do....")
@@ -15,5 +15,5 @@ pid_status_english = system("ps -aux | grep newprojects_agent.rb | grep -vq grep
 						$logger.info ("Process started....")
 						system("nohup bundle exec /usr/bin/ruby ../newprojects_agent.rb &")
 				end
-sleep 300
-end
+#~ sleep 300
+#~ end
