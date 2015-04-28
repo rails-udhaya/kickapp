@@ -4,6 +4,7 @@ require 'logger'
 require 'active_record'
 require 'optparse'
 require 'kickscraper'
+require 'mysql2'
 
 
 ActiveRecord::Base.default_timezone = :utc
