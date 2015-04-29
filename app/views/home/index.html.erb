@@ -154,9 +154,9 @@
 	
 	<%if @project %>
 	
-	<h1><div style="text-align: center;"><%=@project.name%><div style="font-size:15px;  font-weight: lighter;color: grey;">Goal: <%=@project.currency_symbol%><%=@project.goal%></div><div style="font-size:15px;  font-weight: lighter;color: grey;">	<%=((DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)").to_date - Time.now.in_time_zone("Pacific Time (US & Canada)").to_date).to_i)%>
+	<h1><div style="text-align: center;"><%=@project.name%><div style="font-size:15px;  font-weight: lighter;color: grey;">Goal: <%=@project.currency_symbol%><%=@project.goal%></div><div style="font-size:15px;  font-weight: lighter;color: grey;">	<%#=((DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)").to_date - Time.now.in_time_zone("Pacific Time (US & Canada)").to_date).to_i)%>
 	</br>
-	<%=DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)")%>
+	<%#=DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)")%>
 	</div></div></h1>
 
 				<%if @project.location%>
