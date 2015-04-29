@@ -6,9 +6,14 @@ class HomeController < ApplicationController
 				#~ puts "111111111111111111111111111111 #{params[:search]}"
 						if(params[:searchs] && params[:searchs] != "")
 												@project = Project.find_by_kickstart_project_url(params[:searchs])
-												@project_pledged_backers = @project.pledged_backers 
-						end
+												@project_pledged_backers = @project.pledged_backers if @project
+						
+				end
 				
+				if  (params[:searchs] && @project.blank?)
+								flash[:notice] = 'Invalid Url'
+						end
+
 		end
 		
 		def show
