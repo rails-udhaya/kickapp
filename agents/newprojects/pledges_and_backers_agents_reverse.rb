@@ -4,7 +4,7 @@
 #~ https://www.kickstarter.com/projects/350061949/lapis-lazuli-stones-for-enlightenment-truth-and-de.json
 #~ https://github.com/markolson/kickscraper/issues/16
 require 'logger'
-class PledgesAndBackersAgent
+class PledgesAndBackersAgentReverse
     attr_accessor :options, :errors
     
     def initialize(options)
@@ -17,7 +17,7 @@ class PledgesAndBackersAgent
     
     def create_log_file
         Dir.mkdir("#{File.dirname(__FILE__)}/logs") unless File.directory?("#{File.dirname(__FILE__)}/logs")
-        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/pledges_and_backers_agents.log", 'weekly')
+        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/pledges_and_backers_agents_reverse.log", 'weekly')
         #~ $logger.level = Logger::DEBUG
         $logger.formatter = Logger::Formatter.new
     end
@@ -108,57 +108,57 @@ class PledgesAndBackersAgent
                 while true do     
               
                    t_1 =  Thread.new{
-                    s_project_1 = Project.where(:state=>"live")
+                    s_project_1 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_1)
                     }
-                sleep 3600
+                sleep 300
                    t_2 =  Thread.new{
                     #~ s_project_2 = Project.where(:state=>"live").order("id DESC")
-                    s_project_2 = Project.where(:state=>"live")
+                    s_project_2 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_2)
                     }
                     
-                    sleep 3600
+                    sleep 300
                     
                    t_3 =  Thread.new{
-                    s_project_3 = Project.where(:state=>"live")
+                    s_project_3 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_3)
                     
                     }
               
-                sleep 3600           
+                sleep 300           
                    t_4 =  Thread.new{
-                    s_project_4 = Project.where(:state=>"live")
+                    s_project_4 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_4)
                     }
-                sleep 3600    
+                sleep 300    
                 
                    t_5 =  Thread.new{
-                    s_project_5 = Project.where(:state=>"live")
+                    s_project_5 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_5)
                     }
-                sleep 3600    
+                sleep 300    
                 
                 
                    t_6 =  Thread.new{
-                    s_project_6 = Project.where(:state=>"live")
+                    s_project_6 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_6)
                     }
-                sleep 3600    
+                sleep 300    
                 
                 
                    t_7 =  Thread.new{
-                    s_project_7 = Project.where(:state=>"live")
+                    s_project_7 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_7)
                     }
-                sleep 3600    
+                sleep 300    
                 
                 
                    t_8 =  Thread.new{
-                    s_project_8 = Project.where(:state=>"live")
+                    s_project_8 = Project.where(:state=>"live").order("id DESC")
                     start_processing(s_project_8)
                     }
-                sleep 3600    
+                sleep 300    
                 
                 end    
             end    
@@ -183,7 +183,7 @@ options = {}
 optparse = OptionParser.new do|opts|
   # Set a banner, displayed at the top
   # of the help screen.
-  opts.banner = "Usage: ruby pledges_and_backers_agents.rb [options]"
+  opts.banner = "Usage: ruby pledges_and_backers_agents_reverse.rb [options]"
 
   # Define the options, and what they do
   options[:action] = 'start'
@@ -207,6 +207,6 @@ optparse.parse!
 		
 @options = options		
 require File.expand_path('../load_configurations', __FILE__)
-pledges_and_backers_agents = PledgesAndBackersAgent.new(options)
-pledges_and_backers_agents.multy_process
+pledges_and_backers_agents_reverse = PledgesAndBackersAgentReverseReverse.new(options)
+pledges_and_backers_agents_reverse.multy_process
 
