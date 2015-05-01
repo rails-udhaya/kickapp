@@ -47,6 +47,7 @@ Kickapp::Application.routes.draw do
   #     resources :products
   #   end
 
+post 'search' => 'home#search'
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   get '/home/project/:id', to: 'home#show', as: 'project'

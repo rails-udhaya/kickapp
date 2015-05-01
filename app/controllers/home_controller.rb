@@ -4,7 +4,13 @@ class HomeController < ApplicationController
 		def index
 				#~ @projects = Project.find(:all , :order => "id DESC", :limit => 24)
 				#~ puts "111111111111111111111111111111 #{params[:search]}"
-						if(params[:searchs] && params[:searchs] != "")
+				
+
+		end
+		
+		
+		def search
+  		if(params[:searchs] && params[:searchs] != "")
 												@project = Project.find_by_kickstart_project_url(params[:searchs])
 												@project_pledged_backers = @project.pledged_backers if @project
 						
@@ -13,8 +19,7 @@ class HomeController < ApplicationController
 				if  (params[:searchs] && @project.blank?)
 								flash[:notice] = 'Invalid Url'
 						end
-
-		end
+end
 		
 		def show
 				
