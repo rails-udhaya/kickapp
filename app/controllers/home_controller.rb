@@ -3,9 +3,6 @@ class HomeController < ApplicationController
 		
 		def index
 				#~ @projects = Project.find(:all , :order => "id DESC", :limit => 24)
-				#~ puts "111111111111111111111111111111 #{params[:search]}"
-				
-
 		end
 		
 		
@@ -22,8 +19,6 @@ class HomeController < ApplicationController
 end
 		
 		def show
-				
-				puts "ssssssssssssssssssssssss"
 				@project = Project.find(params[:id])
 				@creator = @project.creator
 		end
