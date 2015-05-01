@@ -196,7 +196,8 @@
                            <%=@project.currency_symbol%><%=project_pledged_backer.pledged%> 
                         </td>
                         <td>
-                            		<%=project_pledged_backer.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%I : %M  %p %b %d, %Y")%>
+                            		<%#=project_pledged_backer.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%I : %M  %p %b %d, %Y")%>
+                            		<%=project_pledged_backer.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%I %p %b %d, %Y")%>
                         </td>
                     </tr>
                     <tr>
