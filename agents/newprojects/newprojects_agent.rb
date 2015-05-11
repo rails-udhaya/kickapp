@@ -157,8 +157,8 @@ class NewProjectBuilderAgent
 																																
 																							end
 																																
-																						rescue 
-																						$logger.error "some error"
+																						rescue Exception => e
+																						$logger.error "Error Occured - #{e.message}"
 																						sleep 600									
 																						end																	
 																								end
