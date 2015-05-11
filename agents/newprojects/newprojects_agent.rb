@@ -89,52 +89,52 @@ class NewProjectBuilderAgent
 																																kickstart_project_url = ""
 
 																																reference_creator_id=project.creator.id
-																																creator_name=project.creator.name
-																																creator_=project.creator.slug
-																																biography=project.creator.biography
-																																backed_projects=project.creator.backed_projects
-																																started_projects=project.creator.started_projects
-																																creator_location=project.creator.location
-																																creator_urls=project.creator.urls
-																																puts kickstart_creator_url = project.creator.urls.web.user
-																																avatar=project.creator.avatar
-																																category_wheel=project.creator.category_wheel
-																																started_projects_count=project.creator.started_projects_count
-																																unanswered_surveys_count=project.creator.unanswered_surveys_count
-																																backed_projects_count=project.creator.backed_projects_count
-																																created_projects_count=project.creator.created_projects_count
-																																unread_messages_count=project.creator.unread_messages_count
-																																notifiy=project.creator.notifiy
-																																social=project.creator.social
+																																creator_name=project.creator.name.gsub("'","''").strip()
+																																#~ creator_=project.creator.slug
+																																#~ biography=project.creator.biography
+																																#~ backed_projects=project.creator.backed_projects
+																																#~ started_projects=project.creator.started_projects
+																																#~ creator_location=project.creator.location
+																																#~ creator_urls=project.creator.urls
+																																#~ puts kickstart_creator_url = project.creator.urls.web.user
+																																#~ avatar=project.creator.avatar
+																																#~ category_wheel=project.creator.category_wheel
+																																#~ started_projects_count=project.creator.started_projects_count
+																																#~ unanswered_surveys_count=project.creator.unanswered_surveys_count
+																																#~ backed_projects_count=project.creator.backed_projects_count
+																																#~ created_projects_count=project.creator.created_projects_count
+																																#~ unread_messages_count=project.creator.unread_messages_count
+																																#~ notifiy=project.creator.notifiy
+																																#~ social=project.creator.social
 																																user_updated_at=project.creator.user_updated_at
 																																social=project.creator.social
 
 
 																																reference_project_id = project.id
-																																project_name= project.name
-																																project_slug= project.slug
-																																blurb= project.blurb
+																																project_name= project.name.gsub("'","''").strip()
+																																#~ project_slug= project.slug
+																																#~ blurb= project.blurb
 																																state=project.state
 																																currency= project.currency
 																																currency_symbol= project.currency_symbol
-																																country= project.country
-																																country_short_name= project.country_short_name
-																																country_long_name= project.country_long_name
-																																rewards= project.rewards
-																																photo= project.photo
-																																video=project.video
-																																embed=project.embed
+																																#~ country= project.country
+																																#~ country_short_name= project.country_short_name
+																																#~ country_long_name= project.country_long_name
+																																#~ rewards= project.rewards
+																																#~ photo= project.photo
+																																#~ video=project.video
+																																#~ embed=project.embed
 																																project_location = project.location
-																																friends= project.friends
-																																comments_count = project.comments.count
-																																updates_count=project.updates.count if !project.updates.nil?
-																																backers_count=project.backers_count
+																																#~ friends= project.friends
+																																#~ comments_count = project.comments.count
+																																#~ updates_count=project.updates.count if !project.updates.nil?
+																																#~ backers_count=project.backers_count
 																																goal=project.goal
-																																pledged= project.pledged
+																																#~ pledged= project.pledged
 																																project_urls= project.urls
 																																puts kickstart_project_url= project.urls.web.project.gsub("?ref=newest","").strip()
-																																is_started= project.is_started
-																																is_backing=project.is_backing
+																																#~ is_started= project.is_started
+																																#~ is_backing=project.is_backing
 																																launched_at=project.launched_at
 																																project_updated_at=project.updated_at
 																																deadline=project.deadline
@@ -169,7 +169,7 @@ class NewProjectBuilderAgent
 										rescue Exception => e
 														$logger.error "Error Occured - #{e.message}"
 														$logger.error e.backtrace
-														#~ sleep 600									
+														sleep 300									
 										ensure
 														$logger.close
 														#~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
