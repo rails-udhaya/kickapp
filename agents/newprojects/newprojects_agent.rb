@@ -121,7 +121,7 @@ class NewProjectBuilderAgent
 																																#~ country_short_name= project.country_short_name
 																																#~ country_long_name= project.country_long_name
 																																#~ rewards= project.rewards
-																																#~ photo= project.photo
+																																photo= project.photo
 																																#~ video=project.video
 																																#~ embed=project.embed
 																																project_location = project.location
