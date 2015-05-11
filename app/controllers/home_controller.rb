@@ -22,4 +22,9 @@ end
 				@project = Project.find(params[:id])
 				@creator = @project.creator
 		end
+		
+		
+		def demo_embed
+		end
+		
 end
