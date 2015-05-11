@@ -128,9 +128,9 @@ class NewProjectBuilderAgent
 																																#~ friends= project.friends
 																																#~ comments_count = project.comments.count
 																																#~ updates_count=project.updates.count if !project.updates.nil?
-																																#~ backers_count=project.backers_count
+																																backers_count=project.backers_count
 																																goal=project.goal
-																																#~ pledged= project.pledged
+																																pledged= project.pledged
 																																project_urls= project.urls
 																																puts kickstart_project_url= project.urls.web.project.gsub("?ref=newest","").strip()
 																																#~ is_started= project.is_started
