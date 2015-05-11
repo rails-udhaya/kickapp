@@ -159,7 +159,7 @@ class NewProjectBuilderAgent
 																																
 																						rescue Exception => e
 																						$logger.error "Error Occured - #{e.message}"
-																						sleep 600									
+																						#~ sleep 600									
 																						end																	
 																								end
 																										sleep 600									
@@ -169,7 +169,7 @@ class NewProjectBuilderAgent
 										rescue Exception => e
 														$logger.error "Error Occured - #{e.message}"
 														$logger.error e.backtrace
-														sleep 600									
+														#~ sleep 600									
 										ensure
 														$logger.close
 														#~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
