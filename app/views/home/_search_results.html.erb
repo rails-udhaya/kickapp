@@ -1,146 +1,26 @@
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <style>
+.rotate {
 
-#lButton
-{
+/* Safari */
+-webkit-transform: rotate(-90deg);
 
-	border:1px solid #adc5cf;
-	background: #e4f1f9; /* Old browsers */
-	background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
-	background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
- background: -moz-linear-gradient(center top , #E4F1F9 0%, #D5E7F3 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid #ADC5CF;
-    border-radius: 5px;
-    color: #7DA2AA;
-    cursor: pointer;
-    height: 40px;
-    margin-left: 68%;
-    margin-left: 68%;
-    margin-left: 68%;
-    margin-top: 48px;
-    width: 200px;
-}
+/* Firefox */
+-moz-transform: rotate(-90deg);
 
-.CSSTableGenerator {
-	margin:0px;padding:0px;
-	width:50%;
-	box-shadow: 10px 10px 5px #888888;
-	border:1px solid #ffffff;
-	align:center
-	-moz-border-radius-bottomleft:8px;
-	-webkit-border-bottom-left-radius:8px;
-	border-bottom-left-radius:8px;
-	
-	-moz-border-radius-bottomright:8px;
-	-webkit-border-bottom-right-radius:8px;
-	border-bottom-right-radius:8px;
-	
-	-moz-border-radius-topright:8px;
-	-webkit-border-top-right-radius:8px;
-	border-top-right-radius:8px;
-	
-	-moz-border-radius-topleft:8px;
-	-webkit-border-top-left-radius:8px;
-	border-top-left-radius:8px;
-}.CSSTableGenerator table{
-    border-collapse: collapse;
-        border-spacing: 0;
-	width:100%;
-	height:100%;
-	margin:0px;padding:0px;
-}.CSSTableGenerator tr:last-child td:last-child {
-	-moz-border-radius-bottomright:8px;
-	-webkit-border-bottom-right-radius:8px;
-	border-bottom-right-radius:8px;
-}
-.CSSTableGenerator table tr:first-child td:first-child {
-	-moz-border-radius-topleft:8px;
-	-webkit-border-top-left-radius:8px;
-	border-top-left-radius:8px;
-}
-.CSSTableGenerator table tr:first-child td:last-child {
-	-moz-border-radius-topright:8px;
-	-webkit-border-top-right-radius:8px;
-	border-top-right-radius:8px;
-}.CSSTableGenerator tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:8px;
-	-webkit-border-bottom-left-radius:8px;
-	border-bottom-left-radius:8px;
-}.CSSTableGenerator tr:hover td{
-	background-color:#d3e9ff;
-		
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+transform-origin: left top 0;
 
 }
-.CSSTableGenerator td{
-	vertical-align:middle;
-	
-	background-color:#aad4ff;
-
-	border:1px solid #ffffff;
-	border-width:0px 1px 1px 0px;
-	text-align:left;
-	padding:7px;
-	font-size:20px;
-	font-family:Times New Roman;
-	font-weight:normal;
-	color:#000000;
-}.CSSTableGenerator tr:last-child td{
-	border-width:0px 1px 0px 0px;
-}.CSSTableGenerator tr td:last-child{
-	border-width:0px 0px 1px 0px;
-}.CSSTableGenerator tr:last-child td:last-child{
-	border-width:0px 0px 0px 0px;
-}
-.CSSTableGenerator tr:first-child td{
-		background:-o-linear-gradient(bottom, #0057af 5%, #0057af 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0057af), color-stop(1, #0057af) );
-	background:-moz-linear-gradient( center top, #0057af 5%, #0057af 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#0057af", endColorstr="#0057af");	background: -o-linear-gradient(top,#0057af,0057af);
-
-	background-color:#0057af;
-	border:0px solid #ffffff;
-	text-align:center;
-	border-width:0px 0px 1px 1px;
-	font-size:13px;
-	font-family:Arial;
-	font-weight:bold;
-	color:#ffffff;
-}
-.CSSTableGenerator tr:first-child:hover td{
-	background:-o-linear-gradient(bottom, #0057af 5%, #0057af 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0057af), color-stop(1, #0057af) );
-	background:-moz-linear-gradient( center top, #0057af 5%, #0057af 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#0057af", endColorstr="#0057af");	background: -o-linear-gradient(top,#0057af,0057af);
-
-	background-color:#0057af;
-}
-.CSSTableGenerator tr:first-child td:first-child{
-	border-width:0px 0px 1px 0px;
-}
-.CSSTableGenerator tr:first-child td:last-child{
-	border-width:0px 0px 1px 1px;
-}
-
-
-
-#mainsearch .searchform .searchfield {
-   background: none repeat scroll 0 0 #FFFFFF;
-    border: 4px solid #4B4B4B;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
-    margin-left: 20%;
-    margin-top: 50px;
-    outline: medium none;
-    padding: 6px 6px 6px 8px;
-    position: absolute;
-    width: 600px;
-}
-
-
 </style>
-
 
 
 
@@ -152,13 +32,17 @@
    <%= text_field_tag :searchs, params[:searchs], :class=>"searchfield"%>
    <%= submit_tag "Search", :name => "seaching",:id=>"lButton"  %>
  <% end %>
-	
+	<%if @project %>
+	<div style="float: left; margin-left: 9px; position: absolute; margin-top: -77px;">
+			<img width="190" height="190" title="<%=@project.name%>" alt="<%=@project.name%>" class="attachment-thumbnail wp-post-image" src="<%=@project.photo.little%>">
+			</div>
+			<%end%>
 				</div>
 			
 	
 	<%if @project %>
 	
-	<h1><div style="text-align: center;"><%=@project.name%><div style="font-size:15px;  font-weight: lighter;color: grey;">Goal: <%=@project.currency_symbol%><%=@project.goal%></div><div style="font-size:15px;  font-weight: lighter;color: grey;">	<%#=((DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)").to_date - Time.now.in_time_zone("Pacific Time (US & Canada)").to_date).to_i)%>
+	<h1><div style="text-align: center;height: 116px"><%=@project.name%><div style="font-size:15px;  font-weight: lighter;color: grey;">Goal: <%=@project.currency_symbol%><%=@project.goal%></div><div style="font-size:15px;  font-weight: lighter;color: grey;">	<%#=((DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)").to_date - Time.now.in_time_zone("Pacific Time (US & Canada)").to_date).to_i)%>
 	</br>
 	<%#=DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)")%>
 	</div></div></h1>
@@ -167,13 +51,14 @@
                                                  <h2> <%@project.location.displayable_name%></h2>
 																																																<%end%>
 																																																
-																																																		
-																																																			
 																																																			<%if @project_pledged_backers %>
 																																																			
-																																																			<img width="190" height="190" title="<%=@project.name%>" alt="<%=@project.name%>" class="attachment-thumbnail wp-post-image" src="<%=@project.photo.little%>">
-																																																			<div style="margin-left: 379px;margin-top: -174px;">
-	<div class="CSSTableGenerator" >
+<% if 1 ==2%>			
+ 
+																																																<img width="190" height="190" title="<%=@project.name%>" alt="<%=@project.name%>" class="attachment-thumbnail wp-post-image" src="<%=@project.photo.little%>">
+
+
+<div class="CSSTableGenerator" >
 	
                 <table style="align:center">
                     <tr>
@@ -196,8 +81,7 @@
                            <%=@project.currency_symbol%><%=project_pledged_backer.pledged%> 
                         </td>
                         <td>
-                            		<%#=project_pledged_backer.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%I : %M  %p %b %d, %Y")%>
-                            		<%=project_pledged_backer.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%I %p %b %d, %Y")%>
+                            		<%=project_pledged_backer.pledges_created_at.strftime("%I %p %b %d, %Y")%>
                         </td>
                     </tr>
                     <tr>
@@ -205,12 +89,167 @@
                 </table>
             </div>
             
-												</div>
-																																																			
-																																																				
-																																																	
+<%end%>							
+<%end%>							
+		<div style="">
+				<div id="pledged_chart" ></div>																																																			
+		</div>																																					
 																																														
 	
 	<%end%>
-	<%end%>
+ 
 	
+	
+	
+
+<script>
+<%if @full_pledge_graph%>
+var margin = {top: 90, right: 20, bottom: 70, left: 90},
+    width = 1000 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+padding = 100;
+// Parse the date / time
+var	parseDate = d3.time.format("%Y-%m-%d").parse;
+
+var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+var y = d3.scale.linear().range([height, 0]);
+
+
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+    .tickFormat(d3.time.format("%Y-%m-%d"));
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10)
+				.tickFormat(d3.format("<%=@project.currency_symbol.to_s%>"));
+
+var svg = d3.select("#pledged_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+
+//~ var data_1 = [
+	//~ {	"date":"2013-01",	
+		//~ "value":"100"
+	//~ },
+	//~ {	"date":"2013-02",	
+		//~ "value":"1650"
+	//~ }]
+	
+	
+	//~ var data = JSON.parse(<%=raw @pledges_graph.to_json%>)
+	var data = JSON.parse(<%=raw @full_pledge_graph.to_json%>)
+console.log(data)
+
+    data.forEach(function(d) {
+				//~ console.log(d)
+        d.date = parseDate(d.date);
+        d.value = +d.value;
+    });
+	
+  x.domain(data.map(function(d) { return d.date; }));
+  y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      //~ .attr("dy", ".71em")
+      .attr("dy", "-5em")
+      .style("text-anchor", "end")
+      .text("PLEDGED (<%=@project.currency_symbol%>)");
+
+
+svg.append("g")         
+        .attr("class", "grid")
+        .attr("transform", "translate(0," + height + ")")
+        .call(make_x_axis()
+            .tickSize(-height, 0, 0)
+            .tickFormat("")
+        )
+
+    svg.append("g")         
+        .attr("class", "grid")
+        .call(make_y_axis()
+            .tickSize(-width, 0, 0)
+            .tickFormat("")
+        )
+
+
+
+gro = svg.append('g')
+
+  gro.selectAll("bar")
+      .data(data)
+    .enter()
+				.append("g")
+				.append("rect")
+      .style("fill", "steelblue")
+      .attr("x", function(d) { 
+								return x(d.date);
+						})
+      .attr("width", x.rangeBand())
+      //~ .attr("width", 20)
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); });
+					
+						
+						gro.selectAll("g")
+						.data(data)
+						.append("text")
+						.attr("class", "rotate")
+								.style("fill", "black")
+       .style("font-size", "10px")
+							.style("text-anchor", "middle")
+        .attr("x", function(d) { 
+								return x(d.date) + 15;
+						})
+						.attr("y", function (d) { return y(d.value) + 10 })
+				
+       .text(function (d) { 
+							if(d.value != "")
+							{
+							return  "<%=@project.currency_symbol%>" + d.value;
+							}
+							});
+
+
+// function for the x grid lines
+function make_x_axis() {
+    return d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .ticks(30)
+}
+
+// function for the y grid lines
+function make_y_axis() {
+  return d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .ticks(10)
+}
+<%end%>
+
+</script>
+
+
