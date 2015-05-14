@@ -47,7 +47,7 @@
 	box-shadow: 10px 10px 5px #888888;
 	border:1px solid #ffffff;
 	align:center
-	-moz-border-radius-bottomleft:8px;
+/*	-moz-border-radius-bottomleft:8px;*/
 	-webkit-border-bottom-left-radius:8px;
 	border-bottom-left-radius:8px;
 	
@@ -83,7 +83,7 @@
 	-webkit-border-top-right-radius:8px;
 	border-top-right-radius:8px;
 }.CSSTableGenerator tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:8px;
+/*	-moz-border-radius-bottomleft:8px;*/
 	-webkit-border-bottom-left-radius:8px;
 	border-bottom-left-radius:8px;
 }.CSSTableGenerator tr:hover td{
