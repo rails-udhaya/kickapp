@@ -534,7 +534,7 @@ gro = svg.append('g')
         .attr("x", function(d) {
                                 return x(d.date) + 15;
                         })
-                        .attr("y", function (d) { return y(d.value) + 15 })
+                        .attr("y", function (d) { return y(d.value) })
                
        .text(function (d) {
                             if(d.value != "")
