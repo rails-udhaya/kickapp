@@ -17,7 +17,6 @@ class HomeController < ApplicationController
 																		#~ @pledges = sql.execute("SELECT min(pledged),max(pledged), DATE(pledges_created_at) FROM pledged_backers where project_id = '#{@project.id}' GROUP BY DATE(pledged_backers.pledges_created_at);") rescue {}
 																		@pledges = sql.execute("SELECT min(pledged),max(pledged), DATE(CONVERT_TZ( pledges_created_at ,  'US/Pacific',  'US/Mountain' )) FROM pledged_backers where project_id = '#{@project.id}' GROUP BY  DATE(CONVERT_TZ(pledged_backers.pledges_created_at ,  'US/Pacific',  'US/Mountain' ));") rescue {}
 																		@pledges_graph = @pledges.each_with_index.collect { |item,index| 
-																		puts "ddddddddddddddddddddddddddddddddddddd #{index}"
 																		if index == 0
 																		{:date => item[2], :value => (item[1].to_i).to_s} 
 																		else
@@ -28,9 +27,24 @@ class HomeController < ApplicationController
 																				for i in 1..@goal_date_count
 																						@pledges_graph << {:date =>(@pledges_graph.last[:date] + 1), :value => ""}
 																				end
-																		#~ @pledges_graph_end = {:date =>DateTime.strptime(@project.deadline,'%s').in_time_zone("Pacific Time (US & Canada)").to_date, :value => ""}
-																		#~ @pledges_graph<< @pledges_graph_end
 																		@full_pledge_graph = @pledges_graph.to_json
+
+
+								#backer part start
+																	@backers = sql.execute("SELECT min(backers_count),max(backers_count), DATE(CONVERT_TZ( pledges_created_at ,  'US/Pacific',  'US/Mountain' )) FROM pledged_backers where project_id = '#{@project.id}' GROUP BY  DATE(CONVERT_TZ(pledged_backers.pledges_created_at ,  'US/Pacific',  'US/Mountain' ));") rescue {}
+																		@backers_graph = @backers.each_with_index.collect { |item,index| 
+																		if index == 0
+																		{:date => item[2], :value => (item[1].to_i).to_s} 
+																		else
+																		{:date => item[2], :value => (item[1].to_i-item[0].to_i).to_s} 
+																		end
+																		}
+																				@goal_date_count = ((DateTime.strptime(@project.deadline,'%s').to_date - @backers_graph.last[:date]).to_i - 1)
+																				for i in 1..@goal_date_count
+																						@backers_graph << {:date =>(@backers_graph.last[:date] + 1), :value => ""}
+																				end
+																		@full_backer_graph = @backers_graph.to_json
+
 																		
 								end
 				end
