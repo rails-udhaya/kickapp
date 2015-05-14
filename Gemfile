@@ -43,4 +43,3 @@ gem 'watir-nokogiri',   '~> 1.0.0'
 gem 'watir-webdriver',   '~> 0.6.10'
 gem 'nokogiri'
 gem 'headless'
-gem "selenium-webdriver", "~> 2.38.0"
