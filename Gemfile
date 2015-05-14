@@ -37,3 +37,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'watir',   '~> 5.0.0'
+gem 'watir-nokogiri',   '~> 1.0.0'
+gem 'watir-webdriver',   '~> 0.6.10'
+gem 'nokogiri',   '~> 1.6.3.1'
+gem 'headless'
