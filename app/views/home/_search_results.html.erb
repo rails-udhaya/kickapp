@@ -352,7 +352,7 @@ console.log(data)
 
 
 svg.append("g")         
-        .attr("class", "grid")
+        //~ .attr("class", "grid")
         .attr("transform", "translate(0," + height + ")")
         .call(make_x_axis()
             .tickSize(-height, 0, 0)
@@ -360,7 +360,7 @@ svg.append("g")
         )
 
     svg.append("g")         
-        .attr("class", "grid")
+        //~ .attr("class", "grid")
         .call(make_y_axis()
             .tickSize(-width, 0, 0)
             .tickFormat("")
@@ -439,8 +439,9 @@ var y = d3.scale.linear().range([height, 0]);
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
-    .tickFormat(d3.time.format("%Y-%m-%d"));
 
+    .tickFormat(d3.time.format("%Y-%m-%d"));
+				
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
@@ -491,7 +492,7 @@ console.log(data)
 
 
 svg.append("g")        
-        .attr("class", "grid")
+        //~ .attr("class", "grid")
         .attr("transform", "translate(0," + height + ")")
         .call(make_x_axis()
             .tickSize(-height, 0, 0)
@@ -499,7 +500,7 @@ svg.append("g")
         )
 
     svg.append("g")        
-        .attr("class", "grid")
+        //~ .attr("class", "grid")
         .call(make_y_axis()
             .tickSize(-width, 0, 0)
             .tickFormat("")
