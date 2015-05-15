@@ -6,7 +6,7 @@ gem 'rails', '3.2.17'
 
 gem 'mysql2','~> 0.3.18'
 gem 'kickscraper'
-gem 'magic_encoding'
+gem 'tweetstream'
 
 
 # Gems used only for assets and not required
@@ -43,3 +43,4 @@ gem 'watir-nokogiri',   '~> 1.0.0'
 gem 'watir-webdriver',   '~> 0.6.10'
 gem 'nokogiri'
 gem 'headless'
+gem 'anemone'
