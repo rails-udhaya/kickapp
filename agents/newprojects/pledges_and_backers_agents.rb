@@ -1,6 +1,4 @@
 #encoding: ASCII-8BIT
-
-
 #~ https://www.kickstarter.com/projects/350061949/lapis-lazuli-stones-for-enlightenment-truth-and-de.json
 #~ https://github.com/markolson/kickscraper/issues/16
 require 'logger'
@@ -46,7 +44,6 @@ class PledgesAndBackersAgent
                         if live_project.name.force_encoding("UTF-8").ascii_only?
                             @projects = client.search_projects(live_project.name)
                         else
-                            puts "eeeeeeeeeeeeeee"
                              sam=[]
                             temp_1 = live_project.name.encode(Encoding.find('ASCII'), encoding_options).split(" ")
                             temp_1.each do |t_1|
@@ -67,7 +64,6 @@ class PledgesAndBackersAgent
                             puts live_project.reference_project_id.to_s
                                 if (project.id.to_s == live_project.reference_project_id.to_s)
                                     
-                                    #~ puts project.backers_count != live_project.pledged_backers.last.backers_count
                                     live_project.update_attributes(:state => "#{project.state}", :state_changed_at => "#{project.state_changed_at}")
                                     @dum = ""
                                         if live_project.pledged_backers.empty? 
@@ -75,9 +71,6 @@ class PledgesAndBackersAgent
                                         else
                                             @dum = live_project.pledged_backers.last.backers_count
                                         end
-                                          #~ puts project.backers_count
-                                          #~ puts @dum
-                                        #~ puts project.backers_count != @dum
                                     if (project.backers_count.to_s != @dum.to_s)
                                         backers_count = project.backers_count
                                         pledged =  project.pledged
@@ -85,8 +78,6 @@ class PledgesAndBackersAgent
                                                         $logger.info "Created new backers entry"
                                                         $logger.info "backers_count..........#{backers_count}"
                                                         $logger.info "pledged..........#{pledged}" 
-                                                        #~ puts "backers_count..........#{backers_count}"
-                                                        #~ puts "pledged..........#{pledged}"
                                      end   
                                 end
                                 
@@ -112,6 +103,8 @@ class PledgesAndBackersAgent
                     start_processing(s_project_1)
                     }
                 sleep 3600
+                
+                if 1 == 2
                    t_2 =  Thread.new{
                     #~ s_project_2 = Project.where(:state=>"live").order("id DESC")
                     s_project_2 = Project.where(:state=>"live")
@@ -159,7 +152,7 @@ class PledgesAndBackersAgent
                     start_processing(s_project_8)
                     }
                 sleep 3600    
-                
+                end
                 end    
             end    
               rescue Exception => e

@@ -39,104 +39,44 @@ class NewProjectBuilderAgent
 																										$logger.info  project.id
 																																reference_creator_id= "" 
 																																creator_name= "" 
-																																creator_slug= "" 
-																																biography= "" 
-																																backed_projects= "" 
-																																started_projects= "" 
-																																creator_location= "" 
-																																creator_urls= "" 
-																																avatar= "" 
-																																category_wheel= "" 
-																																started_projects_count= "" 
-																																unanswered_surveys_count= "" 
-																																backed_projects_count= "" 
-																																created_projects_count= "" 
-																																unread_messages_count= "" 
-																																notifiy= "" 
-																																social= "" 
-																																kickstart_creator_url = ""
 																																
 																																#~ projects variables
 																																reference_project_id="" 
 																																project_name="" 
-																																project_slug="" 
-																																blurb="" 
-																																state="" 
+																																state=""
 																																currency="" 
 																																currency_symbol="" 
-																																country="" 
-																																country_short_name="" 
-																																country_long_name="" 
-																																rewards="" 
 																																photo="" 
-																																video="" 
-																																embed="" 
-																																project_location="" 
-																																friends="" 
+																																project_location=""
 																																creator_id="" 
-																																comments_count="" 
-																																updates_count="" 
 																																backers_count="" 
 																																goal="" 
 																																pledged="" 
 																																project_urls="" 
-																																is_started="" 
-																																is_backing="" 
 																																launched_at="" 
-																																project_updated_at="" 
 																																deadline="" 
 																																state_changed_at=""
 																																kickstart_project_url = ""
 
 																																reference_creator_id=project.creator.id
 																																creator_name=project.creator.name.gsub("'","''").strip()
-																																#~ creator_=project.creator.slug
-																																#~ biography=project.creator.biography
-																																#~ backed_projects=project.creator.backed_projects
-																																#~ started_projects=project.creator.started_projects
-																																#~ creator_location=project.creator.location
-																																#~ creator_urls=project.creator.urls
-																																#~ puts kickstart_creator_url = project.creator.urls.web.user
-																																#~ avatar=project.creator.avatar
-																																#~ category_wheel=project.creator.category_wheel
-																																#~ started_projects_count=project.creator.started_projects_count
-																																#~ unanswered_surveys_count=project.creator.unanswered_surveys_count
-																																#~ backed_projects_count=project.creator.backed_projects_count
-																																#~ created_projects_count=project.creator.created_projects_count
-																																#~ unread_messages_count=project.creator.unread_messages_count
-																																#~ notifiy=project.creator.notifiy
-																																#~ social=project.creator.social
 																																user_updated_at=project.creator.user_updated_at
 																																social=project.creator.social
 
 
 																																reference_project_id = project.id
 																																project_name= project.name.gsub("'","''").strip()
-																																#~ project_slug= project.slug
-																																#~ blurb= project.blurb
 																																state=project.state
 																																currency= project.currency
 																																currency_symbol= project.currency_symbol
-																																#~ country= project.country
-																																#~ country_short_name= project.country_short_name
-																																#~ country_long_name= project.country_long_name
-																																#~ rewards= project.rewards
 																																photo= project.photo
-																																#~ video=project.video
-																																#~ embed=project.embed
 																																project_location = project.location
-																																#~ friends= project.friends
-																																#~ comments_count = project.comments.count
-																																#~ updates_count=project.updates.count if !project.updates.nil?
 																																backers_count=project.backers_count
 																																goal=project.goal
 																																pledged= project.pledged
 																																project_urls= project.urls
 																																puts kickstart_project_url= project.urls.web.project.gsub("?ref=newest","").strip()
-																																#~ is_started= project.is_started
-																																#~ is_backing=project.is_backing
 																																launched_at=project.launched_at
-																																project_updated_at=project.updated_at
 																																deadline=project.deadline
 																																state_changed_at=project.state_changed_at
 
@@ -144,17 +84,16 @@ class NewProjectBuilderAgent
 																						if @pro.count <= 0
 																										@creator= Creator.where(:reference_creator_id => reference_creator_id).first
 																																if !@creator
-																																				@creator = Creator.create(:reference_creator_id =>reference_creator_id, :name => creator_name, :slug=>creator_slug, :biography=>biography, :backed_projects=>backed_projects, :started_projects=>started_projects, :location => creator_location, :urls => creator_urls, :avatar=>avatar, :category_wheel=>category_wheel, :started_projects_count=>started_projects_count, :unanswered_surveys_count=>unanswered_surveys_count, :backed_projects_count=>backed_projects_count, :created_projects_count=>created_projects_count, :unread_messages_count=>unread_messages_count, :notifiy=>notifiy, :social=>social, :user_updated_at=>user_updated_at, :social=>social, :kickstart_creator_url => kickstart_creator_url)
+																																				@creator = Creator.create(:reference_creator_id =>reference_creator_id, :name => creator_name)
 																																				$logger.info "Creating new creator"
  																																		else
 																																					$logger.info "Using already existing creator"
 																																				end
 																															
 																															
-																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name, :slug => project_slug, :blurb => blurb, :state => state, :currency => currency, :currency_symbol => currency_symbol, :country => country, :country_short_name => country_short_name, :country_long_name => country_long_name, :rewards => rewards, :photo => photo, :video => video, :embed => embed, :location => project_location, :friends => friends, :comments_count => comments_count, :updates_count => updates_count, :goal => goal,:urls => project_urls, :is_started => is_started, :is_backing => is_backing, :launched_at => launched_at, :project_updated_at => project_updated_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url)
+																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name,:state => state, :currency => currency, :currency_symbol => currency_symbol,:photo => photo,:location => project_location,:goal => goal,:urls => project_urls, :launched_at => launched_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url)
 																									@project.pledged_backers.create(:pledged=>pledged, :backers_count=>backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
 																												$logger.info "Assigned project to creator"
-																																
 																							end
 																																
 																						rescue Exception => e
