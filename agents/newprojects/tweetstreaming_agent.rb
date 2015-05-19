@@ -37,6 +37,7 @@ class TweetStreamingBuilderAgent
 		def start_processing
 										begin
 																		if $db_connection_established
+																												puts "11111111111"
 																				begin
 																										TweetStream::Client.new.track('@kickstarter') do |status|
 																																if (status.text.downcase.include?("just backed") && status.text.downcase.include?("on @kickstarter"))
@@ -52,17 +53,19 @@ class TweetStreamingBuilderAgent
 																																				tweeter_screen_name = "@"+status.user.screen_name.gsub("'","''").strip()
 																																				tweeter_user_id = status.user.id
 																																				kickstarter_project_name = tweet_text.split("just backed").last.split("on @Kickstarter").first.strip()
-																																				
-																																				$logger.info "Tweet id #{tweet_id}"
-																																		data_exists = TwitterBacker.where("kickstarter_project_name = ?  && tweeter_screen_name = ?", "#{kickstarter_project_name}", "#{tweeter_screen_name}").length
-																																				if data_exists == 0
-																																										$logger.info "Creating tweeter"
-																																								@twitter_backer = TwitterBacker.create(:tweet_text =>tweet_text, :tweet_id => tweet_id, :tweeter_name => tweeter_name, :tweeter_screen_name => tweeter_screen_name, :tweeter_user_id => tweeter_user_id, :kickstarter_project_name => kickstarter_project_name)
-																																								#~ sleep 5
-																																				end
+																																				$logger.info "Tweet id #{tweet_id} #{tweet_text}"
+																																				if !status.retweet?
+																																						data_exists = TwitterBacker.where("kickstarter_project_name = ?  && tweeter_screen_name = ?", "#{kickstarter_project_name}", "#{tweeter_screen_name}").length
+																																								if data_exists == 0
+																																														$logger.info "Creating tweeter"
+																																												@twitter_backer = TwitterBacker.create(:tweet_text =>tweet_text, :tweet_id => tweet_id, :tweeter_name => tweeter_name, :tweeter_screen_name => tweeter_screen_name, :tweeter_user_id => tweeter_user_id, :kickstarter_project_name => kickstarter_project_name)
+																																												#~ sleep 5
+																																										end
+																																				end		
 																																end
 																										end
 																				rescue Exception => e
+																				puts "error"
 																								$logger.error "Error Occured - #{e.message}"
 																								$logger.error e.backtrace
 																								sleep 900
