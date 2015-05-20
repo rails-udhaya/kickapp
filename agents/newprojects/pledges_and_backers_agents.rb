@@ -45,7 +45,7 @@ class PledgesAndBackersAgent
                               ou = JSON.parse(response.body)
                               
                              project = ou["project"]
-                             puts project
+                             $logger.info "#{project}"
                            
                             backers_count = ""
                             pledged = ""
@@ -82,11 +82,11 @@ class PledgesAndBackersAgent
                     end
                    
            ActiveRecord::Base.clear_active_connections!
-           puts Time.now
+           $logger.info Time.now
          end
          
          def multy_process
-             puts Time.now
+             $logger.info Time.now
               begin
             if $db_connection_established
               
@@ -119,27 +119,27 @@ class PledgesAndBackersAgent
 
                 
                    t_1 =  Thread.new{
-                   puts "thread 1"
+                   $logger.info "thread 1"
                     start_processing(s_project_1)
                     }
               
                    t_2 =  Thread.new{
-                   puts "thread 2"
+                   $logger.info "thread 2"
                     start_processing(s_project_2)
                     }
                     
                     t_3 =  Thread.new{
-                   puts "thread 3"
+                   $logger.info "thread 3"
                     start_processing(s_project_3)
                     }
                     
                     t_4 =  Thread.new{
-                   puts "thread 4"
+                   $logger.info "thread 4"
                     start_processing(s_project_4)
                     }
                     
                     t_5 =  Thread.new{
-                   puts "thread 5"
+                   $logger.info "thread 5"
                     start_processing(s_project_5)
                     }
                     
