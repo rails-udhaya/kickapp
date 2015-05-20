@@ -1,10 +1,9 @@
+# -*- encoding : utf-8 -*-
 #encoding: ASCII-8BIT
-
-
 #~ https://www.kickstarter.com/projects/350061949/lapis-lazuli-stones-for-enlightenment-truth-and-de.json
 #~ https://github.com/markolson/kickscraper/issues/16
 require 'logger'
-class PledgesAndBackersAgentReverse
+class PledgesAndBackersAgent
     attr_accessor :options, :errors
     
     def initialize(options)
@@ -17,7 +16,7 @@ class PledgesAndBackersAgentReverse
     
     def create_log_file
         Dir.mkdir("#{File.dirname(__FILE__)}/logs") unless File.directory?("#{File.dirname(__FILE__)}/logs")
-        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/pledges_and_backers_agents_reverse.log", 'weekly')
+        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/pledges_and_backers_agents.log", 'weekly')
         #~ $logger.level = Logger::DEBUG
         $logger.formatter = Logger::Formatter.new
     end
@@ -41,12 +40,11 @@ class PledgesAndBackersAgentReverse
                                 :universal_newline => true       # Always break lines with \n
                                 }
                         $logger.info "Processing Project........ #{live_project.id}"
-                        puts live_project.name
+                        #~ puts live_project.name
                        
                         if live_project.name.force_encoding("UTF-8").ascii_only?
                             @projects = client.search_projects(live_project.name)
                         else
-                            puts "eeeeeeeeeeeeeee"
                              sam=[]
                             temp_1 = live_project.name.encode(Encoding.find('ASCII'), encoding_options).split(" ")
                             temp_1.each do |t_1|
@@ -54,6 +52,7 @@ class PledgesAndBackersAgentReverse
                                 begin
                                     sam.push(client.search_projects(t_1))
                                 rescue
+                                puts "Error Occured-2"
                                 end
                                end
                             @projects = sam
@@ -63,11 +62,11 @@ class PledgesAndBackersAgentReverse
                         @projects.each do |project|
                             backers_count = ""
                             pledged = ""
-                            puts project.id.to_s 
-                            puts live_project.reference_project_id.to_s
+                            puts live_project.id
+                            #~ puts project.id.to_s 
+                            #~ puts live_project.reference_project_id.to_s
                                 if (project.id.to_s == live_project.reference_project_id.to_s)
                                     
-                                    #~ puts project.backers_count != live_project.pledged_backers.last.backers_count
                                     live_project.update_attributes(:state => "#{project.state}", :state_changed_at => "#{project.state_changed_at}")
                                     @dum = ""
                                         if live_project.pledged_backers.empty? 
@@ -75,9 +74,6 @@ class PledgesAndBackersAgentReverse
                                         else
                                             @dum = live_project.pledged_backers.last.backers_count
                                         end
-                                          #~ puts project.backers_count
-                                          #~ puts @dum
-                                        #~ puts project.backers_count != @dum
                                     if (project.backers_count.to_s != @dum.to_s)
                                         backers_count = project.backers_count
                                         pledged =  project.pledged
@@ -85,13 +81,12 @@ class PledgesAndBackersAgentReverse
                                                         $logger.info "Created new backers entry"
                                                         $logger.info "backers_count..........#{backers_count}"
                                                         $logger.info "pledged..........#{pledged}" 
-                                                        #~ puts "backers_count..........#{backers_count}"
-                                                        #~ puts "pledged..........#{pledged}"
                                      end   
                                 end
                                 
                         end
                             rescue Exception => e
+                                puts "Error Occured-1 - #{e.message}"
                                 $logger.error "Error Occured - #{e.message}"
                                 $logger.error e.backtrace
                                 sleep 5							
@@ -105,64 +100,80 @@ class PledgesAndBackersAgentReverse
          def multy_process
               begin
             if $db_connection_established
-                while true do     
               
                    t_1 =  Thread.new{
-                    s_project_1 = Project.where(:state=>"live").order("id DESC")
+                   
+                   puts "thread 1"
+                    s_project_1 = Project.where(:state=>"live").limit(1000)
                     start_processing(s_project_1)
                     }
-                sleep 300
+                sleep 2
+                
                    t_2 =  Thread.new{
-                    #~ s_project_2 = Project.where(:state=>"live").order("id DESC")
-                    s_project_2 = Project.where(:state=>"live").order("id DESC")
+                                      puts "thread 2"
+                    s_project_2 = Project.where(:state=>"live").offset(1000).limit(1000)
                     start_processing(s_project_2)
                     }
                     
-                    sleep 300
+                    sleep 2
                     
                    t_3 =  Thread.new{
-                    s_project_3 = Project.where(:state=>"live").order("id DESC")
+                                      puts "thread 3"
+                    s_project_3 = Project.where(:state=>"live").offset(2000).limit(1000)
                     start_processing(s_project_3)
-                    
                     }
               
-                sleep 300           
+                sleep 2           
                    t_4 =  Thread.new{
-                    s_project_4 = Project.where(:state=>"live").order("id DESC")
+                     puts "thread 4"
+                    s_project_4 = Project.where(:state=>"live").offset(3000).limit(1000)
                     start_processing(s_project_4)
                     }
-                sleep 300    
+                sleep 2    
                 
                    t_5 =  Thread.new{
-                    s_project_5 = Project.where(:state=>"live").order("id DESC")
+                     puts "thread 5"
+                    s_project_5 = Project.where(:state=>"live").offset(4000).limit(1000)
                     start_processing(s_project_5)
                     }
-                sleep 300    
+                sleep 2    
                 
                 
                    t_6 =  Thread.new{
-                    s_project_6 = Project.where(:state=>"live").order("id DESC")
+                    s_project_6 = Project.where(:state=>"live").offset(5000).limit(1000)
                     start_processing(s_project_6)
                     }
-                sleep 300    
+                sleep 2    
                 
                 
                    t_7 =  Thread.new{
-                    s_project_7 = Project.where(:state=>"live").order("id DESC")
+                    s_project_7 = Project.where(:state=>"live").offset(6000).limit(1000)
                     start_processing(s_project_7)
                     }
-                sleep 300    
+                sleep 2    
                 
                 
                    t_8 =  Thread.new{
-                    s_project_8 = Project.where(:state=>"live").order("id DESC")
+                    s_project_8 = Project.where(:state=>"live").offset(7000).limit(1000)
                     start_processing(s_project_8)
                     }
-                sleep 300    
+                sleep 2    
                 
-                end    
+                   t_9 =  Thread.new{
+                    s_project_9 = Project.where(:state=>"live").offset(8000).limit(1000)
+                    start_processing(s_project_9)
+                    }
+                sleep 2    
+                
+                   t_10 =  Thread.new{
+                    s_project_10 = Project.where(:state=>"live").offset(90000)
+                    start_processing(s_project_10)
+                    }
+                sleep 2    
+        
             end    
               rescue Exception => e
+              puts "Error Occured-thread - #{e.message}"
                           $logger.error "Error Occured - #{e.message}"
                           $logger.error e.backtrace
                           sleep 300									
@@ -183,7 +194,7 @@ options = {}
 optparse = OptionParser.new do|opts|
   # Set a banner, displayed at the top
   # of the help screen.
-  opts.banner = "Usage: ruby pledges_and_backers_agents_reverse.rb [options]"
+  opts.banner = "Usage: ruby pledges_and_backers_agents.rb [options]"
 
   # Define the options, and what they do
   options[:action] = 'start'
@@ -207,6 +218,6 @@ optparse.parse!
 		
 @options = options		
 require File.expand_path('../load_configurations', __FILE__)
-pledges_and_backers_agents_reverse = PledgesAndBackersAgentReverseReverse.new(options)
-pledges_and_backers_agents_reverse.multy_process
+pledges_and_backers_agents = PledgesAndBackersAgent.new(options)
+pledges_and_backers_agents.multy_process
 

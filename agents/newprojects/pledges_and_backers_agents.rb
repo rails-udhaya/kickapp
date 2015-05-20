@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 #encoding: ASCII-8BIT
 #~ https://www.kickstarter.com/projects/350061949/lapis-lazuli-stones-for-enlightenment-truth-and-de.json
 #~ https://github.com/markolson/kickscraper/issues/16
 require 'logger'
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
 class PledgesAndBackersAgent
     attr_accessor :options, :errors
     
@@ -28,52 +31,40 @@ class PledgesAndBackersAgent
         def start_processing(s_projects)
          
             @live_projects = s_projects
-            #~ puts @live_projects 
                        client = Kickscraper.client
                     @live_projects.each do |live_project|
                     begin
-                                encoding_options = {
-                                :invalid           => :replace,  # Replace invalid byte sequences
-                                :undef             => :replace,  # Replace anything not defined in ASCII
-                                :replace           => '',        # Use a blank for those replacements
-                                :universal_newline => true       # Always break lines with \n
-                                }
+                                
                         $logger.info "Processing Project........ #{live_project.id}"
-                        puts live_project.name
-                       
-                        if live_project.name.force_encoding("UTF-8").ascii_only?
-                            @projects = client.search_projects(live_project.name)
-                        else
-                             sam=[]
-                            temp_1 = live_project.name.encode(Encoding.find('ASCII'), encoding_options).split(" ")
-                            temp_1.each do |t_1|
-                                #~ puts t_1
-                                begin
-                                    sam.push(client.search_projects(t_1))
-                                rescue
-                                end
-                               end
-                            @projects = sam
-                            @projects = @projects.flatten
-                        end
-                        
-                        @projects.each do |project|
+
+                             uri = URI.parse("#{live_project.kickstart_project_url}/stats.json")
+                              http = Net::HTTP.new(uri.host, uri.port)
+                              http.use_ssl = true
+                              http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
+                              response = http.get(uri.request_uri)
+                              ou = JSON.parse(response.body)
+                              
+                             project = ou["project"]
+                             puts project
+                           
                             backers_count = ""
                             pledged = ""
-                            puts project.id.to_s 
-                            puts live_project.reference_project_id.to_s
-                                if (project.id.to_s == live_project.reference_project_id.to_s)
+
+                            puts live_project.id
+                            #~ puts live_project.pledged_backers.last.backers_count
+                            #~ puts live_project.pledged_backers.last.pledged
+                                if (project["id"].to_s == live_project.reference_project_id.to_s)
                                     
-                                    live_project.update_attributes(:state => "#{project.state}", :state_changed_at => "#{project.state_changed_at}")
+                                    live_project.update_attributes(:state => "#{project["state"]}", :state_changed_at => "#{project["state_changed_at"]}")
                                     @dum = ""
                                         if live_project.pledged_backers.empty? 
                                             @dum = 0
                                         else
                                             @dum = live_project.pledged_backers.last.backers_count
                                         end
-                                    if (project.backers_count.to_s != @dum.to_s)
-                                        backers_count = project.backers_count
-                                        pledged =  project.pledged
+                                    if (project["backers_count"].to_s != @dum.to_s)
+                                        backers_count = project["backers_count"]
+                                        pledged =  project["pledged"]
                                                         live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
                                                         $logger.info "Created new backers entry"
                                                         $logger.info "backers_count..........#{backers_count}"
@@ -81,84 +72,119 @@ class PledgesAndBackersAgent
                                      end   
                                 end
                                 
-                        end
                             rescue Exception => e
+                                puts "Error Occured-1 - #{e.message}"
                                 $logger.error "Error Occured - #{e.message}"
                                 $logger.error e.backtrace
-                                sleep 5							
+                                sleep 2							
                             end                    
                     
                     end
                    
            ActiveRecord::Base.clear_active_connections!
+           puts Time.now
          end
          
          def multy_process
+             puts Time.now
               begin
             if $db_connection_established
-                while true do     
               
+              
+              
+
+                                cnt = Project.count / 5
+                                s_project_1 = Project.where(:state=>"live").limit(cnt)
+                                s_project_2 = Project.where(:state=>"live").offset(cnt).limit(cnt)
+                                s_project_3 = Project.where(:state=>"live").offset(cnt+cnt).limit(cnt)
+                                s_project_4 = Project.where(:state=>"live").offset(cnt+cnt+cnt).limit(cnt)
+                                s_project_5 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_6 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_7 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_8 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_9 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_10 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt)
+
+
+#~ puts  s_project_1.collect{|x| x.id}
+#~ puts  s_project_2.collect{|x| x.id}
+#~ puts  s_project_3.collect{|x| x.id}
+#~ puts  s_project_4.collect{|x| x.id}
+#~ puts  s_project_5.collect{|x| x.id}
+#~ puts  s_project_6.collect{|x| x.id}
+#~ puts  s_project_7.collect{|x| x.id}
+#~ puts  s_project_8.collect{|x| x.id}
+#~ puts  s_project_9.collect{|x| x.id}
+#~ puts  s_project_10.collect{|x| x.id}
+
+                
                    t_1 =  Thread.new{
-                    s_project_1 = Project.where(:state=>"live")
+                   puts "thread 1"
                     start_processing(s_project_1)
                     }
-                sleep 3600
-                
-                if 1 == 2
+              
                    t_2 =  Thread.new{
-                    #~ s_project_2 = Project.where(:state=>"live").order("id DESC")
-                    s_project_2 = Project.where(:state=>"live")
+                   puts "thread 2"
                     start_processing(s_project_2)
                     }
                     
-                    sleep 3600
-                    
-                   t_3 =  Thread.new{
-                    s_project_3 = Project.where(:state=>"live")
+                    t_3 =  Thread.new{
+                   puts "thread 3"
                     start_processing(s_project_3)
-                    
                     }
-              
-                sleep 3600           
-                   t_4 =  Thread.new{
-                    s_project_4 = Project.where(:state=>"live")
+                    
+                    t_4 =  Thread.new{
+                   puts "thread 4"
                     start_processing(s_project_4)
                     }
-                sleep 3600    
-                
-                   t_5 =  Thread.new{
-                    s_project_5 = Project.where(:state=>"live")
+                    
+                    t_5 =  Thread.new{
+                   puts "thread 5"
                     start_processing(s_project_5)
                     }
-                sleep 3600    
-                
-                
-                   t_6 =  Thread.new{
-                    s_project_6 = Project.where(:state=>"live")
-                    start_processing(s_project_6)
-                    }
-                sleep 3600    
-                
-                
-                   t_7 =  Thread.new{
-                    s_project_7 = Project.where(:state=>"live")
-                    start_processing(s_project_7)
-                    }
-                sleep 3600    
-                
-                
-                   t_8 =  Thread.new{
-                    s_project_8 = Project.where(:state=>"live")
-                    start_processing(s_project_8)
-                    }
-                sleep 3600    
-                end
-                end    
+                    
+                    #~ t_6 =  Thread.new{
+                   #~ puts "thread 6"
+                    #~ start_processing(s_project_6)
+                    #~ }
+                    
+                    #~ t_7 =  Thread.new{
+                   #~ puts "thread 7"
+                    #~ start_processing(s_project_7)
+                    #~ }
+                    
+                    #~ t_8 =  Thread.new{
+                   #~ puts "thread 8"
+                    #~ start_processing(s_project_8)
+                    #~ }
+                    
+                    #~ t_9 =  Thread.new{
+                   #~ puts "thread 9"
+                    #~ start_processing(s_project_9)
+                    #~ }
+                    
+                    #~ t_10 =  Thread.new{
+                   #~ puts "thread 10"
+                    #~ start_processing(s_project_10)
+                    #~ }
+                    
+                t_1.join
+                t_2.join
+                t_3.join
+                t_4.join
+                t_5.join
+                #~ t_6.join
+                #~ t_7.join
+                #~ t_8.join
+                #~ t_9.join
+                #~ t_10.join
+           
             end    
               rescue Exception => e
+              puts "Error Occured-thread - #{e.message}"
                           $logger.error "Error Occured - #{e.message}"
                           $logger.error e.backtrace
-                          sleep 300									
+                          sleep 2									
                       ensure
                           $logger.close
                           #~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
