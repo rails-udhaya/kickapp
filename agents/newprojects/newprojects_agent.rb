@@ -57,6 +57,9 @@ class NewProjectBuilderAgent
 																																deadline="" 
 																																state_changed_at=""
 																																kickstart_project_url = ""
+																																category = ""
+																																sub_category = ""
+																																slug = ""
 
 																																reference_creator_id=project.creator.id
 																																creator_name=project.creator.name.gsub("'","''").strip()
@@ -79,7 +82,16 @@ class NewProjectBuilderAgent
 																																launched_at=project.launched_at
 																																deadline=project.deadline
 																																state_changed_at=project.state_changed_at
-
+																																slug =project.category.slug.split("/")
+																																
+																																#~ For category
+																																		if slug.length == 2
+																																				category = slug.first.split.map(&:capitalize).join(' ').gsub("'","''").strip()
+																																				sub_category = slug.last.split.map(&:capitalize).join(' ').gsub("'","''").strip()
+																																		elsif slug.length == 1
+																																				category = slug.first.split.map(&:capitalize).join(' ').gsub("'","''").strip()
+																																		end
+																				
 																				@pro = Project.where(:reference_project_id=>reference_project_id)
 																						if @pro.count <= 0
 																										@creator= Creator.where(:reference_creator_id => reference_creator_id).first
@@ -91,7 +103,7 @@ class NewProjectBuilderAgent
 																																				end
 																															
 																															
-																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name,:state => state, :currency => currency, :currency_symbol => currency_symbol,:photo => photo,:location => project_location,:goal => goal,:urls => project_urls, :launched_at => launched_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url)
+																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name,:state => state, :currency => currency, :currency_symbol => currency_symbol,:photo => photo,:location => project_location,:goal => goal,:urls => project_urls, :launched_at => launched_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url,:category => category, :sub_category => sub_category)
 																									@project.pledged_backers.create(:pledged=>pledged, :backers_count=>backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
 																												$logger.info "Assigned project to creator"
 																							end
