@@ -111,7 +111,7 @@ class KickstrterContactInfo
 																										puts facebook_message_url=facebook_message_url.gsub("'","''").strip() if facebook_message_url
 																										puts 		@website_fetched_email = @website_fetched_email.join(", ")
 																				begin
-																								creator.update_attributes(:website_url => website_url,:twitter_url => twitter_url,:facebook_full_name => facebook_full_name,:facebook_url => facebook_url,:facebook_message_url => facebook_message_url,:email => $website_fetched_email)
+																								creator.update_attributes(:website_url => website_url,:twitter_url => twitter_url,:facebook_full_name => facebook_full_name,:facebook_url => facebook_url,:facebook_message_url => facebook_message_url,:email => @website_fetched_email)
 																								project.update_attributes(:contact_is_processed=>true)
 																						rescue Exception => e
 																												$logger.error "Error Occured in inserting - #{e.message}"
