@@ -103,7 +103,7 @@ class NewProjectBuilderAgent
 																																				end
 																															
 																															
-																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name,:state => state, :currency => currency, :currency_symbol => currency_symbol,:photo => photo,:location => project_location,:goal => goal,:urls => project_urls, :launched_at => launched_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url,:category => category, :sub_category => sub_category)
+																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name,:state => state, :currency => currency, :currency_symbol => currency_symbol,:photo => photo,:location => project_location,:goal => goal,:urls => project_urls, :launched_at => launched_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url,:category => category, :sub_category => sub_category,:platform_from=>"KICKSTARTER")
 																									@project.pledged_backers.create(:pledged=>pledged, :backers_count=>backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
 																												$logger.info "Assigned project to creator"
 																							end

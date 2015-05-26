@@ -5,6 +5,7 @@ require 'active_record'
 require 'optparse'
 require 'kickscraper'
 require 'mysql2'
+require 'anemone'
 
 
 

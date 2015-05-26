@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Project < ActiveRecord::Base
-  attr_accessible :reference_project_id, :name, :state, :currency, :currency_symbol,:photo, :location,:urls, :goal, :launched_at, :deadline, :state_changed_at, :kickstart_project_url, :category, :sub_category
+  attr_accessible :reference_project_id, :name, :state, :currency, :currency_symbol,:photo, :location,:urls, :goal, :launched_at, :deadline, :state_changed_at, :kickstart_project_url, :category, :sub_category, :platform_from, :contact_is_processed
+
   serialize :location
   serialize :photo
   serialize :urls
