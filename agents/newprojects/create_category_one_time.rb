@@ -107,7 +107,7 @@ class CreateCategoryOneTime
              $logger.info Time.now
               begin
             if $db_connection_established
-                                s_project_1 = Project.where(:category=>nil)
+                                s_project_1 = Project.where(:category=>nil,:platform_from=>"KICKSTARTER")
                                  start_processing(s_project_1)
            
             end    

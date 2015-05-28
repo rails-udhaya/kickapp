@@ -30,7 +30,7 @@ class KickstrterContactInfo
 																		if $db_connection_established
 																		#~ $logger.info Creator.first
 																						while true do
-																				@projects = Project.where(:contact_is_processed => nil)
+																				@projects = Project.where(:contact_is_processed => nil,:platform_from=>"KICKSTARTER")
 																						@projects.each do |project|
 																								creator = project.creator
 																										kickstart_project_url=project["kickstart_project_url"]

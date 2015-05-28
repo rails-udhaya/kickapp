@@ -104,14 +104,14 @@ class PledgesAndBackersAgent
                    t_1 =  Thread.new{
                    
                    puts "thread 1"
-                    s_project_1 = Project.where(:state=>"live").limit(1000)
+                    s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(1000)
                     start_processing(s_project_1)
                     }
                 sleep 2
                 
                    t_2 =  Thread.new{
                                       puts "thread 2"
-                    s_project_2 = Project.where(:state=>"live").offset(1000).limit(1000)
+                    s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(1000).limit(1000)
                     start_processing(s_project_2)
                     }
                     
@@ -119,54 +119,54 @@ class PledgesAndBackersAgent
                     
                    t_3 =  Thread.new{
                                       puts "thread 3"
-                    s_project_3 = Project.where(:state=>"live").offset(2000).limit(1000)
+                    s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(2000).limit(1000)
                     start_processing(s_project_3)
                     }
               
                 sleep 2           
                    t_4 =  Thread.new{
                      puts "thread 4"
-                    s_project_4 = Project.where(:state=>"live").offset(3000).limit(1000)
+                    s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(3000).limit(1000)
                     start_processing(s_project_4)
                     }
                 sleep 2    
                 
                    t_5 =  Thread.new{
                      puts "thread 5"
-                    s_project_5 = Project.where(:state=>"live").offset(4000).limit(1000)
+                    s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(4000).limit(1000)
                     start_processing(s_project_5)
                     }
                 sleep 2    
                 
                 
                    t_6 =  Thread.new{
-                    s_project_6 = Project.where(:state=>"live").offset(5000).limit(1000)
+                    s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(5000).limit(1000)
                     start_processing(s_project_6)
                     }
                 sleep 2    
                 
                 
                    t_7 =  Thread.new{
-                    s_project_7 = Project.where(:state=>"live").offset(6000).limit(1000)
+                    s_project_7 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(6000).limit(1000)
                     start_processing(s_project_7)
                     }
                 sleep 2    
                 
                 
                    t_8 =  Thread.new{
-                    s_project_8 = Project.where(:state=>"live").offset(7000).limit(1000)
+                    s_project_8 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(7000).limit(1000)
                     start_processing(s_project_8)
                     }
                 sleep 2    
                 
                    t_9 =  Thread.new{
-                    s_project_9 = Project.where(:state=>"live").offset(8000).limit(1000)
+                    s_project_9 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(8000).limit(1000)
                     start_processing(s_project_9)
                     }
                 sleep 2    
                 
                    t_10 =  Thread.new{
-                    s_project_10 = Project.where(:state=>"live").offset(90000)
+                    s_project_10 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(90000)
                     start_processing(s_project_10)
                     }
                 sleep 2    
