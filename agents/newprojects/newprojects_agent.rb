@@ -29,7 +29,7 @@ class NewProjectBuilderAgent
 										begin
 																		if $db_connection_established
 																		#~ $logger.info Creator.first
-																						while true do
+																						#~ while true do
 																								
 																								client = Kickscraper.client
 																								projects = client.newest_projects
@@ -113,14 +113,14 @@ class NewProjectBuilderAgent
 																						#~ sleep 600									
 																						end																	
 																								end
-																										sleep 600									
+																										#~ sleep 600									
 																																													
-																				end
+																				#~ end
 																		end    
 										rescue Exception => e
 														$logger.error "Error Occured - #{e.message}"
 														$logger.error e.backtrace
-														sleep 300									
+														#~ sleep 300									
 										ensure
 														$logger.close
 														#~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
