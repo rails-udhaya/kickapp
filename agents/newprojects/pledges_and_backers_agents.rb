@@ -71,7 +71,7 @@ class PledgesAndBackersAgent
                                                         $logger.info "pledged..........#{pledged}" 
                                      end   
                                 end
-                                
+                                live_project.touch
                             rescue Exception => e
                                 puts "Error Occured-1 - #{e.message}"
                                 $logger.error "Error Occured - #{e.message}"
