@@ -92,7 +92,7 @@ class NewProjectBuilderAgent
 																																				category = slug.first.split.map(&:capitalize).join(' ').gsub("'","''").strip()
 																																		end
 																				
-																				@pro = Project.where(:reference_project_id=>reference_project_id)
+																				@pro = Project.where(:reference_project_id=>reference_project_id,:platform_from=>"KICKSTARTER")
 																						if @pro.count <= 0
 																										@creator= Creator.where(:reference_creator_id => reference_creator_id).first
 																																if !@creator

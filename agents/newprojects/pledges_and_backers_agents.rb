@@ -94,16 +94,16 @@ class PledgesAndBackersAgent
               
 
                                 cnt = Project.count / 5
-                                s_project_1 = Project.where(:state=>"live").limit(cnt)
-                                s_project_2 = Project.where(:state=>"live").offset(cnt).limit(cnt)
-                                s_project_3 = Project.where(:state=>"live").offset(cnt+cnt).limit(cnt)
-                                s_project_4 = Project.where(:state=>"live").offset(cnt+cnt+cnt).limit(cnt)
-                                s_project_5 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_6 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_7 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_8 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_9 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_10 = Project.where(:state=>"live").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt)
+                                s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
+                                s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
+                                s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)
+                                s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
+                                s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_7 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_8 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_9 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_10 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt)
 
 
 #~ puts  s_project_1.collect{|x| x.id}
