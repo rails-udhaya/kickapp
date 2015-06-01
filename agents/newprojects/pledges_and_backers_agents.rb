@@ -93,11 +93,11 @@ class PledgesAndBackersAgent
               
               
 
-                                cnt = Project.count / 5
+                                cnt = Project.count / 3
                                 s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
                                 s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)
-                                s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_7 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
@@ -133,10 +133,10 @@ class PledgesAndBackersAgent
                     start_processing(s_project_3)
                     }
                     
-                    t_4 =  Thread.new{
-                   $logger.info "thread 4"
-                    start_processing(s_project_4)
-                    }
+                    #~ t_4 =  Thread.new{
+                   #~ $logger.info "thread 4"
+                    #~ start_processing(s_project_4)
+                    #~ }
                     
                     #~ t_5 =  Thread.new{
                    #~ $logger.info "thread 5"
@@ -171,7 +171,7 @@ class PledgesAndBackersAgent
                 t_1.join
                 t_2.join
                 t_3.join
-                t_4.join
+                #~ t_4.join
                 #~ t_5.join
                 #~ t_6.join
                 #~ t_7.join
