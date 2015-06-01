@@ -42,8 +42,26 @@ class PledgesAndBackersAgent
                               http.use_ssl = true
                               http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
                               response = http.get(uri.request_uri)
-                              ou = JSON.parse(response.body)
                               
+                              if(response.code != "200")
+                               sleep 3
+                               o = 1
+                               tot = 4
+                               while o <= tot  do
+                                 uri = URI.parse("#{live_project.kickstart_project_url}/stats.json")
+                                 http = Net::HTTP.new(uri.host, uri.port)
+                                 http.use_ssl = true
+                                 http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
+                                 response = http.get(uri.request_uri)
+                                 $logger.info "code in while....#{response.code}.... #{live_project.id}"
+                                 o=o+1
+                                 if(response.code == "200")
+                                  o=5
+                                 end
+                                end
+                              end
+                              
+                             ou = JSON.parse(response.body)
                              project = ou["project"]
                              $logger.info "#{project}"
                            
@@ -74,7 +92,7 @@ class PledgesAndBackersAgent
                                 live_project.touch
                             rescue Exception => e
                                 puts "Error Occured-1 - #{e.message}"
-                                $logger.error "Error Occured - #{e.message}"
+                                $logger.error "Error Occured-1 - #{e.message}"
                                 $logger.error e.backtrace
                                 sleep 2							
                             end                    
@@ -97,8 +115,8 @@ class PledgesAndBackersAgent
                                 s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
                                 s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)
-                                #~ s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt).limit(cnt)
+                                s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
+                                s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_7 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_8 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
@@ -133,15 +151,15 @@ class PledgesAndBackersAgent
                     start_processing(s_project_3)
                     }
                     
-                    #~ t_4 =  Thread.new{
-                   #~ $logger.info "thread 4"
-                    #~ start_processing(s_project_4)
-                    #~ }
+                    t_4 =  Thread.new{
+                   $logger.info "thread 4"
+                    start_processing(s_project_4)
+                    }
                     
-                    #~ t_5 =  Thread.new{
-                   #~ $logger.info "thread 5"
-                    #~ start_processing(s_project_5)
-                    #~ }
+                    t_5 =  Thread.new{
+                   $logger.info "thread 5"
+                    start_processing(s_project_5)
+                    }
                     
                     #~ t_6 =  Thread.new{
                    #~ puts "thread 6"
@@ -171,8 +189,8 @@ class PledgesAndBackersAgent
                 t_1.join
                 t_2.join
                 t_3.join
-                #~ t_4.join
-                #~ t_5.join
+                t_4.join
+                t_5.join
                 #~ t_6.join
                 #~ t_7.join
                 #~ t_8.join
