@@ -10,7 +10,7 @@ development:
   database: kickapp_development
   pool: 5
   username: root
-  password: root
+  password: 
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -23,7 +23,7 @@ test:
   database: kickapp_test
   pool: 5
   username: root
-  password: root
+  password: 
   host: 127.0.0.1
 
 production:
@@ -31,7 +31,7 @@ production:
   encoding: utf8
   reconnect: false
   database: kickdb_prod_app
-  pool: 7
+  pool: 5
   username: dbkickusrapp
   password: PrsxAUVdjGmKVar
   host: 127.0.0.1
