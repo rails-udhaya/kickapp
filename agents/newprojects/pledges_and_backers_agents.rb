@@ -44,7 +44,7 @@ class PledgesAndBackersAgent
                               response = http.get(uri.request_uri)
                               
                               if(response.code != "200")
-                               sleep 3
+                               sleep 2
                                o = 1
                                tot = 4
                                while o <= tot  do
@@ -83,6 +83,7 @@ class PledgesAndBackersAgent
                                     if (project["backers_count"].to_s != @dum.to_s)
                                         backers_count = project["backers_count"]
                                         pledged =  project["pledged"]
+                                        sleep 1
                                                         live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
                                                         $logger.info "Created new backers entry"
                                                         $logger.info "backers_count..........#{backers_count}"
