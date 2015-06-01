@@ -44,7 +44,7 @@ class PledgesAndBackersAgent
                               response = http.get(uri.request_uri)
                               
                               if(response.code != "200")
-                               sleep 3
+                               sleep 2
                                o = 1
                                tot = 4
                                while o <= tot  do
@@ -94,7 +94,7 @@ class PledgesAndBackersAgent
                                 puts "Error Occured-1 - #{e.message}"
                                 $logger.error "Error Occured-1 - #{e.message}"
                                 $logger.error e.backtrace
-                                sleep 2							
+                                #~ sleep 2							
                             end                    
                     
                     end
@@ -111,7 +111,7 @@ class PledgesAndBackersAgent
               
               
 
-                                cnt = Project.count / 3
+                                cnt = Project.count / 5
                                 s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
                                 s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)
@@ -141,21 +141,22 @@ class PledgesAndBackersAgent
                     start_processing(s_project_1)
                     }
               
+              sleep 5
                    t_2 =  Thread.new{
                    $logger.info "thread 2"
                     start_processing(s_project_2)
                     }
-                    
+              sleep 5      
                     t_3 =  Thread.new{
                    $logger.info "thread 3"
                     start_processing(s_project_3)
                     }
-                    
+               sleep 5
                     t_4 =  Thread.new{
                    $logger.info "thread 4"
                     start_processing(s_project_4)
                     }
-                    
+               sleep 5     
                     t_5 =  Thread.new{
                    $logger.info "thread 5"
                     start_processing(s_project_5)
@@ -202,7 +203,7 @@ class PledgesAndBackersAgent
               puts "Error Occured-thread - #{e.message}"
                           $logger.error "Error Occured - #{e.message}"
                           $logger.error e.backtrace
-                          sleep 2									
+                          #~ sleep 2									
                       ensure
                           $logger.close
                           #~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
