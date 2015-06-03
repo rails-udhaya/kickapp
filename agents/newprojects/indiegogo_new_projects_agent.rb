@@ -11,7 +11,7 @@ class IndiegogoNewProjectBuilderAgent
 								 @options
 								create_log_file
         establish_db_connection
-								@indiego_api_config = YAML::load(File.open("../lib/config/indiegogo.yml"))
+								@indiego_api_config = YAML::load(File.open("#{File.dirname(__FILE__)}/lib/config/indiegogo.yml"))
     end
     
     
