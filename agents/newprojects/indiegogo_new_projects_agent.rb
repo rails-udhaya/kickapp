@@ -30,7 +30,7 @@ class IndiegogoNewProjectBuilderAgent
 		def start_processing
 										begin
 																		if $db_connection_established
-																										@indiegogo_new_project_url = "https://api.indiegogo.com/1.1/search/campaigns.json?api_token=#{@indiego_api_config}&sort=new"
+																										@indiegogo_new_project_url = "https://api.indiegogo.com/1.1/search/campaigns.json?api_token=#{@indiego_api_config}&sort=new&per_page=200"
 																										puts @indiegogo_new_project_url
 																										uri = URI.parse(@indiegogo_new_project_url)
 																										http = Net::HTTP.new(uri.host, uri.port)
