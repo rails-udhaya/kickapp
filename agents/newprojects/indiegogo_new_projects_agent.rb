@@ -11,7 +11,7 @@ class IndiegogoNewProjectBuilderAgent
 								 @options
 								create_log_file
         establish_db_connection
-								@indiego_api_config = YAML::load(File.open("#{File.dirname(__FILE__)}/lib/config/indiegogo.yml"))
+								@indiego_api_config = "e88bd0a00305bfdfb18003a75665643b"
     end
     
     
@@ -30,7 +30,7 @@ class IndiegogoNewProjectBuilderAgent
 		def start_processing
 										begin
 																		if $db_connection_established
-																										@indiegogo_new_project_url = "https://api.indiegogo.com/1.1/search/campaigns.json?api_token=#{@indiego_api_config[@options[:env]]["api_key"]}&sort=new"
+																										@indiegogo_new_project_url = "https://api.indiegogo.com/1.1/search/campaigns.json?api_token=#{@indiego_api_config}&sort=new"
 																										puts @indiegogo_new_project_url
 																										uri = URI.parse(@indiegogo_new_project_url)
 																										http = Net::HTTP.new(uri.host, uri.port)
