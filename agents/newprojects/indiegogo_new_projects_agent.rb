@@ -42,6 +42,7 @@ class IndiegogoNewProjectBuilderAgent
 
 																										projects.each do |project|
 																												begin
+																												$logger.info "Processing next project #{project.id}"
 																														reference_creator_id= "" 
 																																		creator_name= "" 
 																																		
