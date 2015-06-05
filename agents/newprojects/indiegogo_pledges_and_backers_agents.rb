@@ -64,7 +64,7 @@ class IndiegogoPledgesAndBackersAgent
                               
                              ou = JSON.parse(response.body)
                              project = ou["response"]
-                             $logger.info "#{project}"
+                             $logger.info "#{project["id"]}"
                            
                             backers_count = ""
                             pledged = ""
