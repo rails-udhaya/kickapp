@@ -19,7 +19,7 @@ class IndiegogoPledgesAndBackersAgent
     
     def create_log_file
         Dir.mkdir("#{File.dirname(__FILE__)}/logs") unless File.directory?("#{File.dirname(__FILE__)}/logs")
-        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/pledges_and_backers_agents.log", 'weekly')
+        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/indiegogo_pledges_and_backers_agents.log", 'weekly')
         #~ $logger.level = Logger::DEBUG
         $logger.formatter = Logger::Formatter.new
     end
