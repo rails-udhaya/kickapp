@@ -112,7 +112,7 @@ class PledgesAndBackersAgent
               
               
 
-                                cnt = Project.count / 5
+                                cnt = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").count / 5
                                 s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
                                 s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)

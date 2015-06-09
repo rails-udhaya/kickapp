@@ -115,7 +115,7 @@ class IndiegogoPledgesAndBackersAgent
               
               
 
-                                cnt = Project.count / 5
+                                cnt =  Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").count / 5
                                 s_project_1 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").limit(cnt)
                                 s_project_2 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt).limit(cnt)
