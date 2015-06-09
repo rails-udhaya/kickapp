@@ -44,7 +44,7 @@ class PledgesAndBackersAgent
                               response = http.get(uri.request_uri)
                               
                               if(response.code != "200")
-                               sleep 3
+                               sleep 5
                                o = 1
                                tot = 4
                                while o <= tot  do
