@@ -15,7 +15,7 @@ class FullProjectBuilderAgent
     
     def create_log_file
         Dir.mkdir("#{File.dirname(__FILE__)}/logs") unless File.directory?("#{File.dirname(__FILE__)}/logs")
-        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/newprojects_agent.log", 'weekly')
+        $logger = Logger.new("#{File.dirname(__FILE__)}/logs/fullprojects_agent.log", 'weekly')
         #~ $logger.level = Logger::DEBUG
         $logger.formatter = Logger::Formatter.new
     end
