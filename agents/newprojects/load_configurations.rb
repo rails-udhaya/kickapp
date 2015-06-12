@@ -23,4 +23,5 @@ require File.expand_path('../../lib/models/creator', __FILE__)
 require File.expand_path('../../lib/models/project', __FILE__)
 require File.expand_path('../../lib/models/pledged_backer', __FILE__)
 require File.expand_path('../../lib/models/twitter_backer', __FILE__)
+require File.expand_path('../../lib/models/kickstarter_category', __FILE__)
 
