@@ -141,7 +141,7 @@ class FullProjectBuilderAgent
 																														end
 																										@i=@i+1
 																								end
-																								 KickstarterCategory.update_attributes(:is_processed => true)
+																									KickstarterCategory.where("category_url == #{url}").all.update_attribute(:is_processed => true)
 																						end
 
 													
