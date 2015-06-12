@@ -38,6 +38,7 @@ class FullProjectBuilderAgent
 																										while @i < @num  do	
 																														url = "#{l["category_url"]}&page=#{@i}"
 																														puts  url
+																														$logger.info  url
 																														doc = Nokogiri::HTML(open("#{url}"))
 																														temp_1 = doc.css("ul#projects_list li.project.col.col-3.mb4")
 																														if temp_1.length > 0
