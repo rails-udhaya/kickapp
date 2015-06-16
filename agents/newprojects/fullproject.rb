@@ -25,12 +25,13 @@ class FullProjectBuilderAgent
         get_db_connection(@options[:env])
     end
     
-		def start_processing
+		def start_processing(proj)
 										begin
 																		if $db_connection_established
 																		#~ $logger.info Creator.first
 																						#~ while true do
-																						lis = KickstarterCategory.where(:is_processed => false)
+																						#~ lis = KickstarterCategory.where(:is_processed => false)
+																						lis = proj
 																						lis.each do |l|
 
 																										@i = 1
@@ -157,7 +158,82 @@ class FullProjectBuilderAgent
 														#~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
 														ActiveRecord::Base.clear_active_connections!
 										end
-		end
+								end
+								
+								
+								
+								
+								
+								
+								
+								def multy_process
+             $logger.info Time.now
+              begin
+            if $db_connection_established
+              
+                                #~ cnt = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").count / 5
+                                #~ s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
+                                #~ s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
+																																
+                                s_project_1 = KickstarterCategory.where(:is_processed => false)
+                                s_project_2 = KickstarterCategory.where("id > 200 and is_processed = false")
+                                s_project_3 = KickstarterCategory.where("id > 300 and is_processed = false")
+                                s_project_4 = KickstarterCategory.where("id > 400 and is_processed = false")
+                                s_project_5 = KickstarterCategory.where("id > 500 and is_processed = false")
+
+
+														
+                
+                   t_1 =  Thread.new{
+                   $logger.info "thread 1"
+                    start_processing(s_project_1)
+                    }
+              
+              sleep 5
+                   t_2 =  Thread.new{
+                   $logger.info "thread 2"
+                    start_processing(s_project_2)
+                    }
+              sleep 5
+                   t_3 =  Thread.new{
+                   $logger.info "thread 3"
+                    start_processing(s_project_3)
+                    }
+              sleep 5
+                   t_4 =  Thread.new{
+                   $logger.info "thread 4"
+                    start_processing(s_project_4)
+                    }
+              sleep 5
+                   t_5 =  Thread.new{
+                   $logger.info "thread 5"
+                    start_processing(s_project_5)
+                    }
+              
+														
+                t_1.join
+                t_2.join
+                t_3.join
+                t_4.join
+                t_5.join
+
+
+            end    
+              rescue Exception => e
+              puts "Error Occured-thread - #{e.message}"
+                          $logger.error "Error Occured - #{e.message}"
+                          $logger.error e.backtrace
+                          #~ sleep 2									
+                      ensure
+                          $logger.close
+                          #~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
+                          ActiveRecord::Base.clear_active_connections!
+             end
+         end
+
+								
+								
+								
 																										
 end		
 
@@ -193,4 +269,4 @@ optparse.parse!
 @options = options		
 require File.expand_path('../load_configurations', __FILE__)
 fullprojects_agent = FullProjectBuilderAgent.new(options)
-fullprojects_agent.start_processing
+fullprojects_agent.multy_process
