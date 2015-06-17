@@ -53,6 +53,7 @@ class FullProjectBuilderAgent
 																																		http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
 																																		response = http.get(uri.request_uri)
 																																		ou = JSON.parse(response.body)
+																																		
 																																						ou["projects"].each do |o|
 																																								begin
 																																								
@@ -178,9 +179,9 @@ class FullProjectBuilderAgent
 																																
                                 s_project_1 = KickstarterCategory.where(:is_processed => false)
                                 s_project_2 = KickstarterCategory.where("id > 200 and is_processed = false")
-                                s_project_3 = KickstarterCategory.where("id > 300 and is_processed = false")
-                                s_project_4 = KickstarterCategory.where("id > 400 and is_processed = false")
-                                s_project_5 = KickstarterCategory.where("id > 500 and is_processed = false")
+                                #~ s_project_3 = KickstarterCategory.where("id > 300 and is_processed = false")
+                                #~ s_project_4 = KickstarterCategory.where("id > 400 and is_processed = false")
+                                #~ s_project_5 = KickstarterCategory.where("id > 500 and is_processed = false")
 
 
 														
@@ -196,27 +197,27 @@ class FullProjectBuilderAgent
                     start_processing(s_project_2)
                     }
               sleep 5
-                   t_3 =  Thread.new{
-                   $logger.info "thread 3"
-                    start_processing(s_project_3)
-                    }
-              sleep 5
-                   t_4 =  Thread.new{
-                   $logger.info "thread 4"
-                    start_processing(s_project_4)
-                    }
-              sleep 5
-                   t_5 =  Thread.new{
-                   $logger.info "thread 5"
-                    start_processing(s_project_5)
-                    }
+                   #~ t_3 =  Thread.new{
+                   #~ $logger.info "thread 3"
+                    #~ start_processing(s_project_3)
+                    #~ }
+              #~ sleep 5
+                   #~ t_4 =  Thread.new{
+                   #~ $logger.info "thread 4"
+                    #~ start_processing(s_project_4)
+                    #~ }
+              #~ sleep 5
+                   #~ t_5 =  Thread.new{
+                   #~ $logger.info "thread 5"
+                    #~ start_processing(s_project_5)
+                    #~ }
               
 														
                 t_1.join
                 t_2.join
-                t_3.join
-                t_4.join
-                t_5.join
+                #~ t_3.join
+                #~ t_4.join
+                #~ t_5.join
 
 
             end    
