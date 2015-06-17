@@ -1,3 +1,4 @@
+#~ 10832
 # -*- encoding : utf-8 -*-
 #~ https://www.kickstarter.com/projects/350061949/lapis-lazuli-stones-for-enlightenment-truth-and-de.json
 #~ https://github.com/markolson/kickscraper/issues/16
@@ -80,8 +81,8 @@ class FullProjectBuilderAgent
 																																														slug = ""
 
 																																										creator_name = o["creator"]["name"].gsub("'","''").strip()
-																																										reference_project_id = o["creator"]["id"]
-																																										reference_creator_id = o["id"]
+																																										reference_creator_id = o["creator"]["id"]
+																																										reference_project_id = o["id"]
 																																										project_name = o["name"].gsub("'","''").strip()
 																																										state = o["state"]
 																																										currency = o["currency"]
