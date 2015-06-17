@@ -52,8 +52,9 @@ class FullProjectBuilderAgent
 																																		http.use_ssl = true
 																																		http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
 																																		response = http.get(uri.request_uri)
-																																		ou = JSON.parse(response.body)
-																																		
+																																		ou = JSON.parse(response.body) if response
+																												
+																																		if ou.length > 0						
 																																						ou["projects"].each do |o|
 																																								begin
 																																								
@@ -141,6 +142,8 @@ class FullProjectBuilderAgent
 																																												$logger.error "Error Occured - #{e.message}"
 																																								end
 																																						end
+																																						
+																																end
 																																end
 																														end
 																										@i=@i+1
