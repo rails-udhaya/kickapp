@@ -53,7 +53,7 @@ class FullProjectBuilderAgent
 																																		http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
 																																		response = http.get(uri.request_uri)
 																																		ou = JSON.parse(response.body) if response
-																												$logger.info ou.length
+																												#~ $logger.info ou.length
 																																		if ou.length > 0						
 																																						ou["projects"].each do |o|
 																																								begin
