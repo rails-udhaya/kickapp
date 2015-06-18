@@ -100,7 +100,7 @@ class PledgesAndBackersAgent
                     
                     end
                    
-           ActiveRecord::Base.clear_active_connections!
+           #~ ActiveRecord::Base.clear_active_connections!
            $logger.info Time.now
          end
          
