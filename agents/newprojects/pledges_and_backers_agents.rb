@@ -208,7 +208,7 @@ class PledgesAndBackersAgent
                       ensure
                           $logger.close
                           #~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
-                          ActiveRecord::Base.clear_active_connections!
+                          #~ ActiveRecord::Base.clear_active_connections!
              end
          end
 
