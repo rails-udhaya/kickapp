@@ -73,45 +73,45 @@ class KickstrterContactInfo
 																											website_url		 != ""
 																												
 																												
-																										begin
-																										if website_url		 != ""
-																														Anemone.crawl("#{website_url}", :discard_page_bodies => true, :depth_limit=>1) do |anemone|
-																																$logger.info "fetching emails from #{website_url}"
-																																puts "fetching emails from #{website_url}"
-																																		anemone.on_every_page do |crawled_page|
-																																								if !crawled_page.body.nil?
-																																												crawled_page.body.scan(/[\w\d]+[\w\d.-]@[\w\d.-]+\.\w{2,6}/).each do |address|
-																																																														#~ if  @website_fetched_email.length >= 15
-																																																																#~ error
-																																																														#~ end
-																																																																		if !@website_fetched_email.include?(address)
-																																																														if (!address.downcase.include?(".jpeg") && !address.downcase.include?(".JPEG") && !address.include?(".jpg") && !address.downcase.include?(".JPG") && !address.downcase.include?(".png") && !address.downcase.include?(".PNG") && !address.downcase.include?(".gif") && !address.downcase.include?(".Gif") && !address.downcase.include?(".GIF") && !address.downcase.include?("._") && !address.downcase.include?(".tif") && !address.downcase.include?(".mp3"))
-																																																																							@website_fetched_email.push address
-																																																																		end
-																																																																				end
+																										#~ begin
+																										#~ if website_url		 != ""
+																														#~ Anemone.crawl("#{website_url}", :discard_page_bodies => true, :depth_limit=>1) do |anemone|
+																																#~ $logger.info "fetching emails from #{website_url}"
+																																#~ puts "fetching emails from #{website_url}"
+																																		#~ anemone.on_every_page do |crawled_page|
+																																								#~ if !crawled_page.body.nil?
+																																												#~ crawled_page.body.scan(/[\w\d]+[\w\d.-]@[\w\d.-]+\.\w{2,6}/).each do |address|
+																																																														#if  @website_fetched_email.length >= 15
+																																																																#error
+																																																														#end
+																																																																		#~ if !@website_fetched_email.include?(address)
+																																																														#~ if (!address.downcase.include?(".jpeg") && !address.downcase.include?(".JPEG") && !address.include?(".jpg") && !address.downcase.include?(".JPG") && !address.downcase.include?(".png") && !address.downcase.include?(".PNG") && !address.downcase.include?(".gif") && !address.downcase.include?(".Gif") && !address.downcase.include?(".GIF") && !address.downcase.include?("._") && !address.downcase.include?(".tif") && !address.downcase.include?(".mp3"))
+																																																																							#~ @website_fetched_email.push address
+																																																																		#~ end
+																																																																				#~ end
 																																																								
-																																												end
-																																										end
+																																												#~ end
+																																										#~ end
 																																		
-																																						end
+																																						#~ end
 																																														
-																																		end
+																																		#~ end
 
-																										end
+																										#~ end
 
-																										rescue Exception => e
-																												$logger.error "Error Occured in email fetching - #{e.message}"
-																												$logger.error e.backtrace
-																										end						
+																										#~ rescue Exception => e
+																												#~ $logger.error "Error Occured in email fetching - #{e.message}"
+																												#~ $logger.error e.backtrace
+																										#~ end						
 
 																										puts website_url = website_url.gsub("'","''").strip() if website_url
 																										puts twitter_url =twitter_url.gsub("'","''").strip() if twitter_url 
 																										puts facebook_full_name=facebook_full_name.gsub("'","''").strip() if facebook_full_name
 																										puts facebook_url=facebook_url.gsub("'","''").strip() if facebook_url
 																										puts facebook_message_url=facebook_message_url.gsub("'","''").strip() if facebook_message_url
-																										puts 		@website_fetched_email = @website_fetched_email.join(", ")
+																										#~ puts 		@website_fetched_email = @website_fetched_email.join(", ")
 																				begin
-																								creator.update_attributes(:website_url => website_url,:twitter_url => twitter_url,:facebook_full_name => facebook_full_name,:facebook_url => facebook_url,:facebook_message_url => facebook_message_url,:email => @website_fetched_email)
+																								creator.update_attributes(:website_url => website_url,:twitter_url => twitter_url,:facebook_full_name => facebook_full_name,:facebook_url => facebook_url,:facebook_message_url => facebook_message_url)
 																								project.update_attributes(:contact_is_processed=>true)
 																						rescue Exception => e
 																												$logger.error "Error Occured in inserting - #{e.message}"
