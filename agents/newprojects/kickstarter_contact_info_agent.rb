@@ -42,7 +42,7 @@ class KickstrterContactInfo
 																										@website_fetched_email = []		
 
 																										puts bio_url = kickstart_project_url + "/creator_bio"
-																										$logger.info "processing...... #{bio_url}"
+																										$logger.info "processing...... #{bio_url} #{project['id']}"
 																												doc = Nokogiri::HTML(open("#{bio_url}"))
 
 																										temp_1 = doc.css("div#main_content")
