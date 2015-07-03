@@ -115,17 +115,17 @@ class IndiegogoPledgesAndBackersAgent
               
               
 
-                                cnt =  Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").count / 5
-                                s_project_1 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").limit(cnt)
-                                s_project_2 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt).limit(cnt)
-                                s_project_3 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt).limit(cnt)
-                                s_project_4 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt).limit(cnt)
-                                s_project_5 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_6 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_7 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_8 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_9 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_10 = Project.where("deadline > ? && platform_from=?",Time.now.to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt)
+                                cnt =  Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").count / 5
+                                s_project_1 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").limit(cnt)
+                                s_project_2 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt).limit(cnt)
+                                s_project_3 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt).limit(cnt)
+                                s_project_4 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt).limit(cnt)
+                                s_project_5 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_6 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_7 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_8 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_9 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_10 = Project.where("deadline > ? && platform_from=?",(Time.now - 2.day).to_i,"INDIEGOGO").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt)
 
 
 #~ puts  s_project_1.collect{|x| x.id}
