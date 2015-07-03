@@ -32,6 +32,7 @@ class IndiegogoPledgesAndBackersAgent
         def start_processing(s_projects)
          
             @live_projects = s_projects
+            @live_projects = Project.where(:id=>65309)
                        client = Kickscraper.client
                     @live_projects.each do |live_project|
                     begin
@@ -80,7 +81,7 @@ class IndiegogoPledgesAndBackersAgent
                                         else
                                             @dum = live_project.pledged_backers.last.backers_count
                                         end
-                                    if (project["contributions_count"].to_s > @dum.to_s)
+                                    if (project["contributions_count"].to_s != @dum.to_s)
                                         backers_count = project["contributions_count"]
                                         pledged =  project["collected_funds"]
                                         #~ sleep 1
