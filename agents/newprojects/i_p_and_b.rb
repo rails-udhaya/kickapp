@@ -32,7 +32,6 @@ class IndiegogoPledgesAndBackersAgent
         def start_processing(s_projects)
          
             @live_projects = s_projects
-            @live_projects = Project.where(:id=>65309)
                        client = Kickscraper.client
                     @live_projects.each do |live_project|
                     begin
