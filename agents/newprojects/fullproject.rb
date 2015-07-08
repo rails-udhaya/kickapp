@@ -36,7 +36,7 @@ class FullProjectBuilderAgent
 																						lis.each do |l|
 
 																										@i = 1
-																										@num = 200
+																										@num = 100
 																										while @i < @num  do	
 																														url = "#{l["category_url"]}&page=#{@i}"
 																														puts  url
@@ -140,6 +140,7 @@ class FullProjectBuilderAgent
 																																										end
 																																								rescue Exception => e
 																																												$logger.error "Error Occured - #{e.message}"
+																																													 KickstarterCategory.where(:category_url =>l["category_url"]).update_all(:is_processed => true)
 																																								end
 																																						end
 																																						
