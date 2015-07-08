@@ -114,6 +114,7 @@ class KickstrterContactInfo
 																								creator.update_attributes(:website_url => website_url,:twitter_url => twitter_url,:facebook_full_name => facebook_full_name,:facebook_url => facebook_url,:facebook_message_url => facebook_message_url)
 																								project.update_attributes(:contact_is_processed=>true)
 																						rescue Exception => e
+																						project.update_attributes(:contact_is_processed=>true)
 																												$logger.error "Error Occured in inserting - #{e.message}"
 																												$logger.error e.backtrace
 																						end
