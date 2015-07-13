@@ -35,8 +35,8 @@ class FullProjectBuilderAgent
 																						lis = proj
 																						lis.each do |l|
 
-																										@i = 1
-																										@num = 100
+																										@i = 99
+																										@num = 200
 																										while @i < @num  do	
 																														url = "#{l["category_url"]}&page=#{@i}"
 																														puts  url
