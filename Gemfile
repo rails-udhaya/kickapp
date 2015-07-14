@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
@@ -7,6 +7,7 @@ gem 'rails', '3.2.17'
 gem 'mysql2','~> 0.3.18'
 gem 'kickscraper'
 gem 'tweetstream'
+gem 'screencap'
 
 
 # Gems used only for assets and not required
