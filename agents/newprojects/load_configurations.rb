@@ -6,6 +6,7 @@ require 'optparse'
 require 'kickscraper'
 require 'mysql2'
 require 'anemone'
+require 'screencap'
 
 
 

@@ -85,6 +85,26 @@ class PledgesAndBackersAgent
                                         pledged =  project["pledged"]
                                         sleep 1
                                                         live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
+                                            begin
+                                               $logger.info "Started creating screen shot for #{live_project.id}"
+                                              r_url = "http://www.funded.today/stats"+live_project.kickstart_project_url.split("projects").last
+                                              f = Screencap::Fetcher.new("#{r_url}")
+                                              screenshot = f.fetch(
+                                              :output => "/var/www/apps/kickapp/current/public/images/#{live_project.id}/#{live_project.id}_pledges.png", 
+                                              :div => '.pledgeChartDaily',
+                                              )
+                                              f = Screencap::Fetcher.new("#{r_url}")
+                                              screenshot = f.fetch(
+                                              :output => "/var/www/apps/kickapp/current/public/images/#{live_project.id}/#{live_project.id}_backers.png", 
+                                              :div => '.backerChartDaily',
+                                              )
+                                              	$logger.info "Completed... screen shot for #{live_project.id}"						
+                                            rescue Exception => e
+                                              puts "Image not created - #{e.message}"
+                                              $logger.error "Image not created #{e.message}"
+                                              $logger.error e.backtrace
+                                              #~ sleep 2							
+                                            end
                                                         $logger.info "Created new backers entry"
                                                         $logger.info "backers_count..........#{backers_count}"
                                                         $logger.info "pledged..........#{pledged}" 
