@@ -85,6 +85,9 @@ class PledgesAndBackersAgent
                                         pledged =  project["pledged"]
                                         sleep 1
                                                         live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
+                                                $logger.info "Created new backers entry"
+                                                $logger.info "backers_count..........#{backers_count}"
+                                                $logger.info "pledged..........#{pledged}" 
                                             begin
                                                $logger.info "Started creating screen shot for #{live_project.id}"
                                               r_url = "http://www.funded.today/stats"+live_project.kickstart_project_url.split("projects").last
@@ -105,9 +108,7 @@ class PledgesAndBackersAgent
                                               $logger.error e.backtrace
                                               #~ sleep 2							
                                             end
-                                                        $logger.info "Created new backers entry"
-                                                        $logger.info "backers_count..........#{backers_count}"
-                                                        $logger.info "pledged..........#{pledged}" 
+                                             
                                      end   
                                 end
                                 live_project.touch
