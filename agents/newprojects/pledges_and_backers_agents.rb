@@ -135,13 +135,13 @@ class PledgesAndBackersAgent
               
               
 
-                                cnt = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").count / 6
+                                cnt = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").count / 5
                                 s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
                                 s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)
                                 s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
                                 s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt).limit(cnt)
-                                s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                #~ s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_7 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_8 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_9 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
@@ -185,12 +185,12 @@ class PledgesAndBackersAgent
                    $logger.info "thread 5"
                     start_processing(s_project_5)
                     }
-               sleep 5
-                    t_6 =  Thread.new{
-                   puts "thread 6"
-                    start_processing(s_project_6)
-                    }
-                    sleep 5
+               #~ sleep 5
+                    #~ t_6 =  Thread.new{
+                   #~ puts "thread 6"
+                    #~ start_processing(s_project_6)
+                    #~ }
+                    #~ sleep 5
                     
                     #~ t_7 =  Thread.new{
                    #~ puts "thread 7"
@@ -218,7 +218,7 @@ class PledgesAndBackersAgent
                 t_3.join
                 t_4.join
                 t_5.join
-                t_6.join
+                #~ t_6.join
                 #~ t_7.join
                 #~ t_8.join
                 #~ t_9.join
