@@ -111,12 +111,12 @@ class NewProjectBuilderAgent
 																																						puts r_url = "http://www.funded.today/stats"+@project.kickstart_project_url.split("projects").last
 																																						f = Screencap::Fetcher.new("#{r_url}")
 																																						screenshot = f.fetch(
-																																						:output => "/var/www/apps/kickapp/current/public/images/#{@project.id}/#{@project.id}_pledges.png", 
+																																						:output => "/var/www/apps/kickapp/current/public/images#{@project.kickstart_project_url.split('projects').last}/pledges.png", 
 																																						:div => '.pledgeChartDaily',
 																																						)
 																																						f = Screencap::Fetcher.new("#{r_url}")
 																																						screenshot = f.fetch(
-																																						:output => "/var/www/apps/kickapp/current/public/images/#{@project.id}/#{@project.id}_backers.png", 
+																																						:output => "/var/www/apps/kickapp/current/public/images#{@project.kickstart_project_url.split('projects').last}/backers.png", 
 																																						:div => '.backerChartDaily',
 																																						)
 																																$logger.info "Completed... screen shot for #{@project.id}"						

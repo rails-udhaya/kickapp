@@ -44,7 +44,8 @@ class PledgesAndBackersAgent
                               response = http.get(uri.request_uri)
                               
                               if(response.code != "200")
-                               sleep 5
+                               #~ sleep 5
+                               sleep 2
                                o = 1
                                tot = 4
                                while o <= tot  do
@@ -83,7 +84,7 @@ class PledgesAndBackersAgent
                                     if (project["backers_count"].to_s != @dum.to_s)
                                         backers_count = project["backers_count"]
                                         pledged =  project["pledged"]
-                                        sleep 1
+                                        #~ sleep 1
                                                         live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
                                                 $logger.info "Created new backers entry"
                                                 $logger.info "backers_count..........#{backers_count}"
@@ -93,12 +94,12 @@ class PledgesAndBackersAgent
                                               r_url = "http://www.funded.today/stats"+live_project.kickstart_project_url.split("projects").last
                                               f = Screencap::Fetcher.new("#{r_url}")
                                               screenshot = f.fetch(
-                                              :output => "/var/www/apps/kickapp/current/public/images/#{live_project.id}/#{live_project.id}_pledges.png", 
+                                              :output => "/var/www/apps/kickapp/current/public/images#{live_project.kickstart_project_url.split('projects').last}/pledges.png", 
                                               :div => '.pledgeChartDaily',
                                               )
                                               f = Screencap::Fetcher.new("#{r_url}")
                                               screenshot = f.fetch(
-                                              :output => "/var/www/apps/kickapp/current/public/images/#{live_project.id}/#{live_project.id}_backers.png", 
+                                              :output => "/var/www/apps/kickapp/current/public/images#{live_project.kickstart_project_url.split('projects').last}/backers.png", 
                                               :div => '.backerChartDaily',
                                               )
                                               	$logger.info "Completed... screen shot for #{live_project.id}"						
@@ -133,13 +134,13 @@ class PledgesAndBackersAgent
               
               
 
-                                cnt = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").count / 5
+                                cnt = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").count / 6
                                 s_project_1 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").limit(cnt)
                                 s_project_2 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt).limit(cnt)
                                 s_project_3 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt).limit(cnt)
                                 s_project_4 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt).limit(cnt)
                                 s_project_5 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt).limit(cnt)
-                                #~ s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
+                                s_project_6 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_7 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_8 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
                                 #~ s_project_9 = Project.where(:state=>"live",:platform_from=>"KICKSTARTER").offset(cnt+cnt+cnt+cnt+cnt+cnt+cnt+cnt).limit(cnt)
@@ -184,21 +185,23 @@ class PledgesAndBackersAgent
                     start_processing(s_project_5)
                     }
                     
-                    #~ t_6 =  Thread.new{
-                   #~ puts "thread 6"
-                    #~ start_processing(s_project_6)
-                    #~ }
+                    t_6 =  Thread.new{
+                   puts "thread 6"
+                    start_processing(s_project_6)
+                    }
+                    sleep 5
                     
                     #~ t_7 =  Thread.new{
                    #~ puts "thread 7"
                     #~ start_processing(s_project_7)
                     #~ }
+                    #~ sleep 5
                     
                     #~ t_8 =  Thread.new{
                    #~ puts "thread 8"
                     #~ start_processing(s_project_8)
                     #~ }
-                    
+                    #~ sleep 5
                     #~ t_9 =  Thread.new{
                    #~ puts "thread 9"
                     #~ start_processing(s_project_9)
@@ -214,7 +217,7 @@ class PledgesAndBackersAgent
                 t_3.join
                 t_4.join
                 t_5.join
-                #~ t_6.join
+                t_6.join
                 #~ t_7.join
                 #~ t_8.join
                 #~ t_9.join
