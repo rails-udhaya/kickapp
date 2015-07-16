@@ -89,6 +89,7 @@ class PledgesAndBackersAgent
                                                 $logger.info "Created new backers entry"
                                                 $logger.info "backers_count..........#{backers_count}"
                                                 $logger.info "pledged..........#{pledged}" 
+                                           if ("1" == "2")
                                             begin
                                                $logger.info "Started creating screen shot for #{live_project.id}"
                                               r_url = "http://www.funded.today/stats"+live_project.kickstart_project_url.split("projects").last
@@ -109,7 +110,7 @@ class PledgesAndBackersAgent
                                               $logger.error e.backtrace
                                               #~ sleep 2							
                                             end
-                                             
+                                          end  
                                      end   
                                 end
                                 live_project.touch
