@@ -184,7 +184,7 @@ class PledgesAndBackersAgent
                    $logger.info "thread 5"
                     start_processing(s_project_5)
                     }
-                    
+               sleep 5
                     t_6 =  Thread.new{
                    puts "thread 6"
                     start_processing(s_project_6)
