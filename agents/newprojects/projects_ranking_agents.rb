@@ -99,12 +99,12 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 																																				name= ""
 																																				kickstart_project_url= ""
 																																				puts reference_project_id = project_ranking["id"]
-																																				puts name =	project_ranking["name"].gsub("'","''").strip()
+																																				puts name =	project_ranking["name"].gsub("'","''").strip().encode("iso-8859-1").force_encoding("utf-8")
 																																				puts kickstart_project_url =	project_ranking["urls"]["web"]["project"].split("?").shift
 																																				puts ks_discover_query = @ks_discover_query  
 																																				puts ran = ran+1
 																																				begin
-																																				@project_ranking		=	ProjectRanking.create(:reference_project_id => reference_project_id, :ks_discover_query=>ks_discover_query, :ranking=>ran,:name=>name, :kickstart_project_url=>kickstart_project_url)
+																																				@project_ranking		=	ProjectRanking.create(:reference_project_id => reference_project_id, :ks_discover_query=>ks_discover_query, :ranking=>ran:kickstart_project_url=>kickstart_project_url)
 																																				rescue
 																																								$logger.error "mysql inserting error"
 																																				end
@@ -112,7 +112,7 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 																																		rescue Exception => e
 																																										$logger.error "Error Occured - #{e.message}"
 																																										$logger.error e.backtrace
-																																										sleep 300									
+																																										sleep 10									
 																																		end
 																																		
 																												end
@@ -121,7 +121,7 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 										rescue Exception => e
 														$logger.error "Error Occured - #{e.message}"
 														$logger.error e.backtrace
-														sleep 300									
+														sleep 10									
 										ensure
 														$logger.close
 														#~ #Our program will automatically will close the DB connection. But even making sure for the safety purpose.
