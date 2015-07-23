@@ -99,7 +99,7 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 																																				name= ""
 																																				kickstart_project_url= ""
 																																				puts reference_project_id = project_ranking["id"]
-																																				puts name =	project_ranking["name"].gsub("'","''").strip().encode("iso-8859-1").force_encoding("utf-8")
+																																				#~ puts name =	project_ranking["name"].gsub("'","''").strip().encode("iso-8859-1").force_encoding("utf-8")
 																																				puts kickstart_project_url =	project_ranking["urls"]["web"]["project"].split("?").shift
 																																				puts ks_discover_query = @ks_discover_query  
 																																				puts ran = ran+1
