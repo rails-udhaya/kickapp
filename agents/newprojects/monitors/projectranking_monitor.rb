@@ -8,12 +8,12 @@ require 'logger'
 						$logger.formatter = Logger::Formatter.new
 
 #~ while true do
-pid_status_english = system("ps -aux | grep projects_ranking_agent.rb | grep -vq grep")
+pid_status_english = system("ps -aux | grep projects_ranking_agents.rb | grep -vq grep")
 				if pid_status_english
 						$logger.info ("nothing to do....")
 				else
 						$logger.info ("Process started....")
-						 system("nohup bundle exec /usr/bin/ruby /var/www/apps/kickapp/current/agents/newprojects/projects_ranking_agent.rb -e production &")
+						 system("nohup bundle exec /usr/bin/ruby /var/www/apps/kickapp/current/agents/newprojects/projects_ranking_agents.rb -e production &")
 				end
 #~ sleep 300
 #~ end
