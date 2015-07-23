@@ -104,7 +104,7 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 																																				puts ks_discover_query = @ks_discover_query  
 																																				puts ran = ran+1
 																																				begin
-																																				@project_ranking		=	ProjectRanking.create(:reference_project_id => reference_project_id, :ks_discover_query=>ks_discover_query, :ranking=>ran:kickstart_project_url=>kickstart_project_url)
+																																				@project_ranking		=	ProjectRanking.create(:reference_project_id => reference_project_id, :ks_discover_query=>ks_discover_query, :ranking=>ran,:kickstart_project_url=>kickstart_project_url)
 																																				rescue
 																																								$logger.error "mysql inserting error"
 																																				end
