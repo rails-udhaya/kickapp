@@ -75,6 +75,7 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 																																@ks_discover_query = l[0]
 																																while @i <= 27
 																																						puts url = l[1]+"#{@i}"
+																																						$logger.info url
 																																						ur =  URI::encode(url)
 																																						uri = URI.parse(ur)
 																																						http = Net::HTTP.new(uri.host, uri.port)
