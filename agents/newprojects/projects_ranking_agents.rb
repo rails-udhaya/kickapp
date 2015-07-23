@@ -99,11 +99,11 @@ lis=[["everything_popular","https://www.kickstarter.com/discover/advanced?sort=p
 																																				reference_project_id= ""
 																																				name= ""
 																																				kickstart_project_url= ""
-																																				puts reference_project_id = project_ranking["id"]
-																																				#~ puts name =	project_ranking["name"].gsub("'","''").strip().encode("iso-8859-1").force_encoding("utf-8")
-																																				puts kickstart_project_url =	project_ranking["urls"]["web"]["project"].split("?").shift
-																																				puts ks_discover_query = @ks_discover_query  
-																																				puts ran = ran+1
+																																				reference_project_id = project_ranking["id"]
+																																				#~ name =	project_ranking["name"].gsub("'","''").strip().encode("iso-8859-1").force_encoding("utf-8")
+																																				kickstart_project_url =	project_ranking["urls"]["web"]["project"].split("?").shift
+																																				ks_discover_query = @ks_discover_query  
+																																				ran = ran+1
 																																				begin
 																																				@project_ranking		=	ProjectRanking.create(:reference_project_id => reference_project_id, :ks_discover_query=>ks_discover_query, :ranking=>ran,:kickstart_project_url=>kickstart_project_url)
 																																				rescue
@@ -164,6 +164,6 @@ optparse.parse!
 @options = options		
 require File.expand_path('../load_configurations', __FILE__)
 projectsranking_agent = ProjectRankingBuilderAgent.new(options)
-puts Time.now
+$logger.info Time.now
 projectsranking_agent.start_processing
-puts Time.now
+$logger.info Time.now
