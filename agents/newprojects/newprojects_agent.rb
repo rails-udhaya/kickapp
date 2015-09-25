@@ -104,31 +104,8 @@ class NewProjectBuilderAgent
 																															
 																															
 																									@project		=	@creator.projects.create(:reference_project_id => reference_project_id, :name => project_name,:state => state, :currency => currency, :currency_symbol => currency_symbol,:photo => photo,:location => project_location,:goal => goal,:urls => project_urls, :launched_at => launched_at, :deadline => deadline, :state_changed_at => state_changed_at,:kickstart_project_url=>kickstart_project_url,:category => category, :sub_category => sub_category,:platform_from=>"KICKSTARTER")
-																									@project.pledged_backers.create(:pledged=>pledged, :backers_count=>backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
+																									@project.pledged_backers.create(:pledged=>pledged, :backers_count=>backers_count,:increase_pledges=>pledged, :increase_backers=>backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
 																									$logger.info "Assigned project to creator"
-																									if ("1" == "2")
-																																begin
-																																$logger.info "Started creating screen shot for #{@project.id}"
-																																						puts r_url = "http://www.funded.today/stats"+@project.kickstart_project_url.split("projects").last
-																																						f = Screencap::Fetcher.new("#{r_url}")
-																																						screenshot = f.fetch(
-																																						:output => "/var/www/apps/kickapp/current/public/images#{@project.kickstart_project_url.split('projects').last}/pledges.png", 
-																																						:div => '.pledgeChartDaily',
-																																						)
-																																						f = Screencap::Fetcher.new("#{r_url}")
-																																						screenshot = f.fetch(
-																																						:output => "/var/www/apps/kickapp/current/public/images#{@project.kickstart_project_url.split('projects').last}/backers.png", 
-																																						:div => '.backerChartDaily',
-																																						)
-																																$logger.info "Completed... screen shot for #{@project.id}"						
-																																rescue Exception => e
-																																				puts "Image not created - #{e.message}"
-																																				$logger.error "Image not created #{e.message}"
-																																				$logger.error e.backtrace
-																																				#~ sleep 2							
-																																end
-																										end
-																												
 																							end
 																																
 																						rescue Exception => e

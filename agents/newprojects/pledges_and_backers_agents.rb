@@ -68,6 +68,8 @@ class PledgesAndBackersAgent
                            
                             backers_count = ""
                             pledged = ""
+                            increase_pledges = ""
+                            increase_backers = ""
 
                             puts live_project.id
                             #~ puts live_project.pledged_backers.last.backers_count
@@ -75,42 +77,25 @@ class PledgesAndBackersAgent
                                 if (project["id"].to_s == live_project.reference_project_id.to_s)
                                     
                                     live_project.update_attributes(:state => "#{project["state"]}", :state_changed_at => "#{project["state_changed_at"]}")
-                                    @dum = ""
+                                    dum_backers = ""
+                                    dum_pledges = ""
                                         if live_project.pledged_backers.empty? 
-                                            @dum = 0
+                                            dum_backers = 0
+                                            dum_pledges = 0
                                         else
-                                            @dum = live_project.pledged_backers.last.backers_count
+                                            dum_pledges = live_project.pledged_backers.last.pledged
+                                            dum_backers = live_project.pledged_backers.last.backers_count
                                         end
-                                    if (project["backers_count"].to_s != @dum.to_s)
+                                    if (project["backers_count"].to_s != dum_backers.to_s)
                                         backers_count = project["backers_count"]
                                         pledged =  project["pledged"]
+                                        increase_pledges = pledged.to_i - dum_pledges.to_i
+                                        increase_backers = backers_count.to_i - dum_backers.to_i
                                         sleep 1
-                                                        live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
+                                        live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:increase_pledges=>increase_pledges,:increase_backers => increase_backers,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
                                                 $logger.info "Created new backers entry"
                                                 $logger.info "backers_count..........#{backers_count}"
                                                 $logger.info "pledged..........#{pledged}" 
-                                           if ("1" == "2")
-                                            begin
-                                               $logger.info "Started creating screen shot for #{live_project.id}"
-                                              r_url = "http://www.funded.today/stats"+live_project.kickstart_project_url.split("projects").last
-                                              f = Screencap::Fetcher.new("#{r_url}")
-                                              screenshot = f.fetch(
-                                              :output => "/var/www/apps/kickapp/current/public/images#{live_project.kickstart_project_url.split('projects').last}/pledges.png", 
-                                              :div => '.pledgeChartDaily',
-                                              )
-                                              f = Screencap::Fetcher.new("#{r_url}")
-                                              screenshot = f.fetch(
-                                              :output => "/var/www/apps/kickapp/current/public/images#{live_project.kickstart_project_url.split('projects').last}/backers.png", 
-                                              :div => '.backerChartDaily',
-                                              )
-                                              	$logger.info "Completed... screen shot for #{live_project.id}"						
-                                            rescue Exception => e
-                                              puts "Image not created - #{e.message}"
-                                              $logger.error "Image not created #{e.message}"
-                                              $logger.error e.backtrace
-                                              #~ sleep 2							
-                                            end
-                                          end  
                                      end   
                                 end
                                 live_project.touch

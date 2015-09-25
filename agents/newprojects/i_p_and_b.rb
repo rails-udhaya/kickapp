@@ -68,31 +68,40 @@ class IndiegogoPledgesAndBackersAgent
                            
                             backers_count = ""
                             pledged = ""
-
                             puts live_project.id
                             #~ puts live_project.pledged_backers.last.backers_count
                             #~ puts live_project.pledged_backers.last.pledged
                                 if (project["id"].to_s == live_project.reference_project_id.to_s)
                                     
-                                    @dum = ""
+                                    dum_backers = ""
+                                    dum_pledges = ""
                                         if live_project.pledged_backers.empty? 
-                                            @dum = 0
+                                            dum_backers = 0
+                                            dum_pledges = 0
                                         else
-                                            @dum = live_project.pledged_backers.last.backers_count
-                                        end
-                                    if (project["contributions_count"].to_s != @dum.to_s)
+                                            dum_pledges = live_project.pledged_backers.last.pledged
+                                            dum_backers = live_project.pledged_backers.last.backers_count
+                                     end
+                                           
+                                        
+                                        puts "live_project #{live_project.pledged_backers.last.pledged}"
+                                    if (project["contributions_count"].to_s != dum_backers.to_s)
                                         backers_count = project["contributions_count"]
                                         pledged =  project["collected_funds"]
+                                        increase_pledges = pledged.to_i - dum_pledges.to_i
+                                        increase_backers = backers_count.to_i - dum_backers.to_i
                                         #~ sleep 1
-                                                        live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
+                                        
+                                                       live_project.pledged_backers.create(:pledged=>pledged,:backers_count => backers_count,:increase_pledges=>increase_pledges,:increase_backers => increase_backers,:pledges_created_at=>Time.now.in_time_zone("Pacific Time (US & Canada)"))
+                                                        
                                                         $logger.info "Created new backers entry"
                                                         $logger.info "backers_count..........#{backers_count}"
                                                         $logger.info "pledged..........#{pledged}" 
 																																																								puts "Created new backers entry"
-                                                        puts "backers_count..........#{backers_count}"
-                                                        puts "pledged..........#{pledged}" 
+                                                        puts "live_project #{project["contributions_count"].to_s != dum_backers.to_s}"
+                                                      
                                      end   
-                                end
+                                   end
                                 live_project.touch
                             rescue Exception => e
                                 puts "Error Occured-1 - #{e.message}"
